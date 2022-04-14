@@ -1,12 +1,12 @@
 <?php
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'SLUB Digital Collections',
-	'description' => 'Templates, Styles and Configuration for the Kitodo.Presentation based Digital Collections by SLUB Dresden',
+	'title' => 'UBMA Digital Collections',
+	'description' => 'Templates, Styles and Configuration for Kitodo.Presentation based Digital Collections by SLUB Dresden adapted to UL Mannheim',
 	'category' => 'plugin',
-	'author' => 'Alexander Bigga',
-	'author_email' => 'typo3@slub-dresden.de',
-	'author_company' => 'SLUB Dresden',
+	'author' => 'Alexander Bigga, Bernd Fallert',
+	'author_email' => 'bernd.fallert@bib.uni-mannheim.de',
+	'author_company' => 'UL Mannheim',
 	'shy' => '',
 	'priority' => '',
 	'module' => '',
