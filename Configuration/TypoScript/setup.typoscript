@@ -68,6 +68,12 @@ page {
                 title = {$config.kitodo.rootPage.title}
                 cssClass = {$config.kitodo.rootPage.cssClass}
             }
+            oaiPage {
+                pid = {$config.kitodo.oaiPage.pid}
+            }
+            searchPage {
+                pid = {$config.kitodo.searchPage.pid}
+            }
 
             termsOfUsePid = {$config.kitodo.termsOfUsePid}
 
@@ -150,10 +156,14 @@ page {
 # body class overrides
 # --------------------------------------------------------------------------------------------------------------------
 [getTSFE().id == {$config.kitodo.collectionView}]
-page.bodyTag = <body class="collections">
+page.bodyTag = <body class="collections ubma-body">
 # render content parts only
 [END]
 
 [getTSFE().id == {$config.kitodo.listView}]
-page.bodyTag = <body class="listview">
+page.bodyTag = <body class="listview ubma-body">
+[END]
+
+[getTSFE().id == {$config.searchPage.pid}]
+page.bodyTag = <body class="searchpage ubma-body">
 [END]
