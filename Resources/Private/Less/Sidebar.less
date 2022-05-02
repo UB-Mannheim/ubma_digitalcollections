@@ -221,6 +221,7 @@
         }
         .metadata-toggle {
             display: none;
+            color: @color-ubma;
         }
 
     }
@@ -288,7 +289,7 @@
                     position: absolute;
                     top: -5px;
                     right: 0;
-                    width: 200px;
+                    width: auto;
                     background: fade(@secondary-color, 97%);
                     max-height: none;
                     font-size: 14px;
@@ -392,6 +393,8 @@
                 color: @primary-color;
                 display: block;
                 cursor: pointer;
+                // Uni Ma underline because links are hard to see
+                border-bottom: .1875rem solid @color-ubma-links-border;
                 &:before {
                     position: absolute;
                     top: -5px;
@@ -765,7 +768,7 @@
             dd {
                 a {
                     color: black;
-                    &[href*="digital.slub"] {
+                    &[href*="digi.bib"] {
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;

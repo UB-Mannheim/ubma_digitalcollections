@@ -7,9 +7,10 @@ module.exports = function(grunt) {
             development: {
                 options: {
                     sourceMap: true,
-                    compress: true,
-                    yuicompress: true,
-                    optimization: 2
+                    compress: false,
+                    yuicompress: false,
+                    optimization: 2,
+                    sourceMapFileInline: true
                 },
                 files: {
                     "Resources/Public/Css/Digitalcollections.css" : "Resources/Private/Less/Digitalcollections.less",

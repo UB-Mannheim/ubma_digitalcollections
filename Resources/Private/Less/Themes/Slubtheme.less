@@ -10,11 +10,14 @@
  */
 
 // The paths to external Resources
-@header-logo: '@{basepath}Resources/Public/Images/Slub/Slublogo.svg';
-@control-icons: '@{basepath}Resources/Public/Images/Slub/viewerControlIcons.svg';
+@header-logo: '@{basepath}Resources/Public/Images/UBMA/Ubmalogo.svg';
+@control-icons: '@{basepath}Resources/Public/Images/UBMA/viewerControlIcons.svg';
+@color-ubma: #232e58;
+@color-ubma-links-border: #d1d7df;
 
 // Colors
-@primary-color: rgb(204, 0, 0);
+// @primary-color: rgb(204, 0, 0);
+@primary-color: @color-ubma;
 @secondary-color: rgb(17, 102, 119);
 @secondary-color-light: desaturate(lighten(@secondary-color, 27%), 22%);
 @basegrey-color: rgb(51, 51, 51);
@@ -38,7 +41,7 @@
             left: 0;
             right: -60px;
             height: 85px;
-            background: url('@{basepath}Resources/Public/Images/Slub/headerbarBg.svg') no-repeat left top;
+            background: url('@{basepath}Resources/Public/Images/UBMA/headerbarBg.svg') no-repeat left top;
             background-size: 100% 100%;
             content: " ";
             pointer-events: none;

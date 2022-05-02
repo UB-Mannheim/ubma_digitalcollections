@@ -1,5 +1,5 @@
 ###################################################
-# All used Constants for SLUB Digital Collections
+# All used Constants for UBMA Digital Collections
 ###################################################
 config {
     kitodo {
@@ -31,7 +31,19 @@ config {
             title = Digitale Sammlungen
 
             # cat=plugin.tx_slubdigitalcollections/links/0302; type=string; label= Kitodo CSS-class
-            cssClass = dlf-slub-logo
+            cssClass = dlf-ubma-logo
+        }
+
+        # oai id config
+        oaiPage {
+            # cat=plugin.tx_ubmadigitalcollections/links/0303; type=int+; label= Kitodo OAI Page
+            pid  = 8
+        }
+
+        # search id config
+        searchPage {
+            # cat=plugin.tx_ubmadigitalcollections/links/0304; type=int+; label= Kitodo Search Page
+            pid  = 6
         }
 
         # cat=plugin.tx_slubdigitalcollections/links/0320; type=int+; label=Kitodo.Presentation (dlf) Storage Pid
