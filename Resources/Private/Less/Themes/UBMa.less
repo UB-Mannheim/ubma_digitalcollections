@@ -1,0 +1,679 @@
+/*
+ *
+ * UBMa Basic Styles
+ * ================================================
+ * Color typography and adjustments as a
+ * basic styling for out of the box implementation
+ *
+ * Author: Bernd Fallert <bernd.fallert@bib.uni-mannheim.de>
+  *
+ */
+
+// Aus Uni
+html {
+  font-family: sans-serif;
+  // 1
+  line-height: 1.15;
+  // 2
+  -ms-text-size-adjust: 100%;
+  // 3
+  -webkit-text-size-adjust: 100%;
+  // 3
+}
+
+// mixin für unterstrichene Anker
+.uni-a() {
+    a {
+        color: @uma-dark-blue;
+        border-bottom: 0.1875rem solid #d1d7df;
+
+        &:hover {
+            color: @uma-medium-blue;
+            border-color: @uma-light-blue;
+        }
+    }
+}
+
+
+
+body.ubma-body,
+body.collections,
+body.listview {
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4,
+    .has-subheadline + .subheadline,
+    .h4, .h4,
+    h5, .h5,
+    h6, .h6 {
+        font-family: "myriad-pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        color: inherit;
+        text-rendering: optimizeLegibility;
+    }
+    h1 small, .h1 small,
+    h2 small, .h2 small,
+    h3 small, .h3 small,
+    h4 small,
+    .has-subheadline + .subheadline small,
+    .h4 small, .h4 small,
+    h5 small, .h5 small,
+    h6 small, .h6 small {
+        line-height: 0;
+        color: @uma-medium-gray;
+    }
+
+    h1, .h1 {
+      font-size: 2rem;
+      line-height: 1.25;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    h2, .h2 {
+      font-size: 1.75rem;
+      line-height: 1.42857;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    h3, .h3 {
+      font-size: 1.5rem;
+      line-height: 1.16667;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+
+    h4,
+    .has-subheadline + .subheadline,
+    .h4, .h4 {
+      font-size: 1.25rem;
+      line-height: 1.4;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    h5, .h5 {
+      font-size: 1.25rem;
+      line-height: 1.4;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    h6, .h6 {
+      font-size: 1.25rem;
+      line-height: 1.4;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    h1,
+    .h1 {
+        padding-top: 1.3125rem;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 6.5625rem;
+            height: 0.5rem;
+            background-color: @uma-dark-blue;
+            top: 0;
+            left: -32px;
+        }
+    }
+
+
+    @media print, screen and (min-width: 64.0625em) {
+        h1, .h1 {
+            font-size: 3rem;
+            line-height: 1;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+        h2, .h2 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+        h3, .h3 {
+            font-size: 2rem;
+            line-height: 1.25;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        h4,
+        .has-subheadline + .subheadline,
+        .h4, .h4 {
+            font-size: 1.625rem;
+            line-height: 1.23077;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+        h5, .h5 {
+            font-size: 1.625rem;
+            line-height: 1.23077;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+        h6, .h6 {
+            font-size: 1.625rem;
+            line-height: 1.23077;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    a {
+        line-height: inherit;
+        color: @uma-dark-blue;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover, a:focus {
+            color: #1e284c;
+        }
+        img {
+            border: 0;
+        }
+    }
+    // unterstrichene a
+    .uni-a();
+
+    // bei Thumbnails unterstreichung ausschalten
+    .tx-dlf-collection-thumbnail {
+        a {
+            border-bottom: none;
+        }
+    }
+
+    div.main-column {
+        .tx-dlf-collection {
+            .tx-dlf-collection-list .tx-dlf-collection-col {
+                .tx-dlf-collection-item .tx-dlf-collection-meta-information {
+                    h4 a {
+                        color: @uma-dark-blue;
+                    }
+                }
+            }
+        }
+        .frame-search-form,
+        .search-form {
+            .tx-dlf-search {
+                form {
+                    #tx-dlf-search-suggest {
+                        &:after {
+                            //background-color: hotpink;
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    aside.sidebar {
+        .tx-dlf-search-facets {
+           ul li ul li a {
+               color: @uma-dark-blue;
+               padding-bottom: 0;
+               margin-bottom: 5px;
+           }
+        }
+    }
+
+    .ui-helper-hidden-accessible {
+         display: none;
+    }
+
+    .main-column {
+        .tx-dlf-listview {
+            p.tx-dlf-sortinfo {
+                margin-top: 22px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+
+	body.ubma-body,
+    body.collections,
+    body.listview {
+        aside.sidebar {
+            .tx-dlf-search-facets {
+                ul li ul li a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+// mixin
+.hide-in-newspaper() {
+    &.tx-dlf-kitodo-id,
+    &.tx-dlf-metadata-year,
+    &.meta_dfgviewer_key,
+    &.meta_dfgviewer_value,
+    &.tx-dlf-metadata-erscheinungsdatum-year {
+        display: none;
+    }
+}
+
+.hide-in-newspaper-anchor() {
+    // &.tx-dlf-metadata-title,
+    &.tx-dlf-kitodo-id,
+    &.tx-dlf-metadata-year,
+    &.meta_dfgviewer_key,
+    &.meta_dfgviewer_value,
+    &.tx-dlf-metadata-erscheinungsdatum-year {
+        display: none;
+    }
+}
+
+.hide-in-newspaper-calender() {
+    &.tx-dlf-metadata-title,
+    &.tx-dlf-kitodo-id,
+    &.tx-dlf-metadata-year,
+    &.meta_dfgviewer_key,
+    &.meta_dfgviewer_value,
+    &.tx-dlf-metadata-erscheinungsdatum-year {
+        display: none;
+    }
+}
+
+.hide-in-normal() {
+    &.tx-dlf-kitodo-id,
+    &.tx-dlf-metadata-erscheinungsdatum-year,
+    &.tx-dlf-metadata-year,
+    &.meta_dfgviewer_key,
+    &.meta_dfgviewer_value {
+        display: none;
+    }
+}
+
+div.fwds,
+div.backs {
+    &.over {
+        span {
+            &.first,
+            &.rwnd,
+            &.prev {
+                a,
+                span {
+                    background-color: rgba(255, 255, 255, 0.6);
+                    padding-right: 10px;
+                    min-width: 200px;
+                }
+            }
+            &.next,
+            &.fwd,
+            &.last {
+                a,
+                span {
+                    background-color: rgba(255, 255, 255, 0.6);
+                    min-width: 200px;
+                    padding-right: 90px;
+                }
+            }
+        }
+    }
+}
+
+.tx-dlf-pagebrowser:empty {
+    display: none;
+
+    & + ol.tx-dlf-abstracts {
+        border-top: none;
+    }
+}
+
+body {
+    .document-functions {
+        & > ul {
+            & > li.submenu {
+                & > ul {
+                    background-color: @uma-dark-blue-transparent;
+                }
+            }
+
+            li.submenu {
+                &.open {
+                    &:focus-within:before {
+                        display: inherit;
+                        border-bottom-color: @uma-dark-blue-transparent;
+                    }
+                    &.open {
+                        &:before {
+                             display: inherit;
+                             border-bottom-color: @uma-dark-blue-transparent;
+                        }
+                    }
+                }
+                & {
+                    &:focus-within:before {
+                        display: none;
+                    }
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+//
+    .document-view {
+        .document-functions {
+            &.missing-provider-image {
+                ul {
+                    li {
+                        &.submenu {
+                            &.downloads.open,
+                            &.links.open {
+                                ul {
+                                    display: inherit;
+                                    left: 10px;
+                                }
+                            }
+                            &.downloads,
+                            &.links {
+                                ul {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .control-bar .header-bar nav .secondary-nav {
+        background-color: @uma-dark-blue-transparent;
+
+        &:before {
+            border-right-color: @uma-dark-blue-transparent;
+        }
+    }
+    .tx-dlf-toc {
+        ul.toc {
+            ul {
+                li {
+                    &.current,
+                    &:nth-child(even) {
+                        //background: @uma-medium-blue;
+                    }
+                }
+            }
+        }
+        .tx-dlf-wincontent > ul.toc > li > a span.title {
+           color: @uma-dark-blue;
+           border-bottom: 0.1875rem solid #d1d7df;
+
+           &:hover {
+              color: @uma-medium-blue;
+              border-color: @uma-light-blue;
+           }
+           span.meta-type-icon {
+              border-bottom: none;
+           }
+        }
+    }
+    // -------------------------------------------
+    // Metadatenbereich
+    // -------------------------------------------
+    .tx-dlf-metadata {
+       .uni-a();
+
+        // Feldbezeichner weniger intensiv wie Feldinhalte
+        dl {
+            dt {
+                color: @uma-dark-gray;
+            }
+            dd {
+                // erste Zeile Type beide Werte grau
+                &.tx-dlf-metadata-type {
+                    color: @uma-dark-gray;
+                }
+            }
+        }
+    }
+
+    .metadata-wrapper {
+        // if newspaper view
+        &.metadata-newspaper {
+
+            .tx-dlf-metadata {
+
+                // Feldbezeichner weniger intensiv wie Feldinhalte
+                dl {
+                    dt {
+                        .hide-in-newspaper();
+                    }
+                    dd {
+                        .hide-in-newspaper();
+                    }
+                }
+            }
+        }
+
+        // if newspaper year overview
+        &.metadata-newspaper-anchor {
+
+            .tx-dlf-metadata {
+
+                // Feldbezeichner weniger intensiv wie Feldinhalte
+                dl {
+                    dt {
+                        .hide-in-newspaper-anchor();
+                    }
+                    dd {
+                        .hide-in-newspaper-anchor();
+                    }
+                }
+            }
+        }
+
+        // if newspaper calender
+        &.metadata-newspaper-year {
+
+            .tx-dlf-metadata {
+
+                // Feldbezeichner weniger intensiv wie Feldinhalte
+                dl {
+                    dt {
+                        .hide-in-newspaper-calender();
+                    }
+                    dd {
+                        .hide-in-newspaper-calender();
+                    }
+                }
+            }
+        }
+
+
+        // if newspaper view
+        &:not(.metadata-newspaper):not(.metadata-newspaper-year):not(.metadata-newspaper-anchor) {
+
+            .tx-dlf-metadata {
+
+                // Feldbezeichner weniger intensiv wie Feldinhalte
+                dl {
+                    dt {
+                        .hide-in-normal();
+                    }
+                    dd {
+                        .hide-in-normal();
+                    }
+                }
+            }
+        }
+
+
+
+    }
+
+
+    .view-functions {
+        .image-manipulation {
+            .slider-container {
+                background: @uma-dark-blue-transparent;
+
+                &:before {
+                    border-bottom-color: @uma-dark-blue-transparent;
+                }
+            }
+        }
+        ul {
+            li.pages {
+                form {
+                    select {
+                        border-color: @uma-dark-blue;
+                        color: @uma-dark-blue;
+                    }
+                }
+            }
+        }
+    }
+    .tx-dlf-toolsFulltextsearch {
+	.fulltext-search-toggle {
+            &:after {
+                color: @uma-dark-blue;
+            }
+        }
+        form {
+            background: @uma-dark-blue-transparent;
+
+            &:before  {
+                border-bottom-color: @uma-dark-blue-transparent;
+            }
+            input[type="text"] {
+                color: @uma-dark-blue;
+            }
+        }
+        #tx-dlf-search-in-document-results {
+            background: @uma-dark-blue-transparent;
+        }
+    }
+
+    // toc newspapers
+    .toc-wrapper.toc-newspaper {
+        .tx-dlf-toc {
+            ul.toc {
+                li.submenu {
+                    span.meta-type-Tag,
+                    span.meta-type-Monat {
+                        background-color: hotpink;
+                        display: none;
+
+                        & + span.title {
+                            background-color: yellow;
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        aside.sidebar,
+        .main-column {
+            margin-bottom: 110px;
+        }
+    }
+}
+
+
+// Ende aus Uni
+body {
+    min-height: 100vh;
+    display: flex;
+}
+
+footer {
+    //position: fixed;
+    position: absolute;
+    bottom: 0;
+    min-width: 100%;
+    background-color: #ccc;
+    text-align: right;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    // in collectionlist alph. icons behind footer
+    z-index: 1000;
+}
+div#footernav {
+    float: left;
+    min-height: 30px;
+}
+span#copyright {
+    margin-right: 53px;
+}
+
+.tx-dlf-metadata {
+    h1 {
+        &:before {
+            content: unset;
+        }
+    }
+}
+
+.tx-dlf-listview {
+    label:nth-of-type(2) {
+        padding-left: 10px;
+    }
+}
+
+aside.sidebar {
+
+    .tx-dlf-enable-offcanvas {
+        h3 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+}
+
+// volltext mit originalem Zeilenumbruch darstellen
+div#tx-dlf-fulltextselection span.textline {
+    display: block;
+}
+
+// display search field after 0.5s, so you dont see unformated search form with extended search field on startup
+form#dont_show_on_startup {
+	animation: cssAnimation 0s 0.5s forwards;
+	visibility: visible;
+	opacity: 0;
+}
+
+@keyframes cssAnimation {
+	to { opacity: 1; }
+}
+
+.tx-dlf-pagegrid-list {
+	li {
+		.tx-dlf-pagegrid-pagination {
+			.pageindex {
+				font-weight: normal;
+				font-size: smaller;
+				
+				&:after {
+					content: ' - ';
+				}
+			}
+		}
+		
+		&.tx-dlf-pagegrid-cur {
+			.tx-dlf-pagegrid-pagination {
+				background-color: @uma-light-gray;
+				font-style: italic;
+			}
+		}
+	}
+}
