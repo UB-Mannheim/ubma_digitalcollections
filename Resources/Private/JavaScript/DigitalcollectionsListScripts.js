@@ -35,7 +35,14 @@ $(function () {
 
     // Init collection overview on intro page
     var layoutColumns = '<li class="tx-dlf-collection-col col-1"></li><li class="tx-dlf-collection-col col-2"></li><li class="tx-dlf-collection-col col-3"></li>';
-    $('.tx-dlf-collection-list').prepend(layoutColumns).append($('.tx-dlf-collection-list-additionals')).randomize('li.tx-dlf-collection-item').colcade({
+    //--------------------------
+    // version with randomize
+    //--------------------------
+    //$('.tx-dlf-collection-list').prepend(layoutColumns).append($('.tx-dlf-collection-list-additionals')).randomize('li.tx-dlf-collection-item').colcade({
+    //    columns: '.tx-dlf-collection-col',
+    //    items: '.tx-dlf-collection-item'
+    //});
+    $('.tx-dlf-collection-list').prepend(layoutColumns).append($('.tx-dlf-collection-list-additionals')).colcade({
         columns: '.tx-dlf-collection-col',
         items: '.tx-dlf-collection-item'
     });
@@ -108,14 +115,14 @@ function mobileCheck() {
 }
 
 // randomizer to shuffle collection elements on intro page
-$.fn.randomize = function (selector) {
-    (selector ? this.find(selector) : this).parent().each(function () {
-        $(this).children(selector).sort(function () {
-            return Math.random() - 0.5;
-        }).detach().appendTo(this);
-    });
-    return this;
-};
+//$.fn.randomize = function (selector) {
+//    (selector ? this.find(selector) : this).parent().each(function () {
+//        $(this).children(selector).sort(function () {
+//            return Math.random() - 0.5;
+//        }).detach().appendTo(this);
+//    });
+//    return this;
+//};
 
 // Sort function for collection entries on intro page
 sortAlphabetical = function (element, sortItems) {
