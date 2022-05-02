@@ -18,6 +18,8 @@ page {
     includeCSS {
         base = {$config.kitodo.css.base}
         base.media = screen,projection
+        base.disableCompression = 1
+        base.excludeFromConcatenation = 1
     }
 
     10 = FLUIDTEMPLATE
@@ -66,4 +68,4 @@ page {
 
 }
 
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:slub_digitalcollections/Configuration/TypoScript/SitePackage/navigation.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:ubma_digitalcollections/Configuration/TypoScript/SitePackage/navigation.typoscript">
