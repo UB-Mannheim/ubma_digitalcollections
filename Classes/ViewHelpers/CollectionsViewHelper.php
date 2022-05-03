@@ -1,5 +1,5 @@
 <?php
-namespace Slub\SlubDigitalcollections\ViewHelpers;
+namespace Slub\UbmaDigitalcollections\ViewHelpers;
 /***************************************************************
  *  Copyright notice
  *
@@ -62,7 +62,7 @@ class CollectionsViewHelper extends AbstractViewHelper
         if (\TYPO3\CMS\Core\Utility\MathUtility::canBeInterpretedAsInteger($kitodoId)) {
             // calculate cache identifier
             $cacheIdentifier = $kitodoId;
-            $cache = GeneralUtility::makeInstance(CacheManager::class)->getCache('slub_digitalcollections_matomo_collections');
+            $cache = GeneralUtility::makeInstance(CacheManager::class)->getCache('ubma_digitalcollections_matomo_collections');
 
             if (($result = $cache->get($cacheIdentifier)) === FALSE) {
                 /** @var RequestFactory $requestFactory */
