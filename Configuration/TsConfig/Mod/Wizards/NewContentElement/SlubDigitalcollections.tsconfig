@@ -4,13 +4,13 @@ mod.wizards.newContentElement.wizardItems {
   ubma_digitalcollections {
     header = UBMA Digitalcollections
     elements {
-      slubdigitalcollections_singlecollection {
+      ubmadigitalcollections_singlecollection {
         iconIdentifier = tx-dlf-collection
         title = LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang.xlf:plugins.single_collection_view
         description = LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang.xlf:plugins.single_collection_view.description
         tt_content_defValues {
           CType = list
-          list_type = slubdigitalcollections_singlecollection
+          list_type = ubmadigitalcollections_singlecollection
         }
       }
     }

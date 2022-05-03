@@ -37,7 +37,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Slub\\SlubDigitalcollections\\": "Classes/"
+      "Slub\\UbmaDigitalcollections\\": "Classes/"
     }
   },
   "extra": {
