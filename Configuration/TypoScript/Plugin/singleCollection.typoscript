@@ -1,4 +1,4 @@
-plugin.tx_slubdigitalcollections_singlecollection {
+plugin.tx_ubmadigitalcollections_singlecollection {
     view {
         templateRootPaths.110 = EXT:ubma_digitalcollections/Resources/Private/Plugins/SingleCollection/Templates/
         partialRootPaths.110 = EXT:ubma_digitalcollections/Resources/Private/Plugins/SingleCollection/Partials/
