@@ -20,6 +20,6 @@ mod.web_layout.BackendLayouts {
                     }
                 }
 		}
-		icon = EXT:slub_digitalcollections/Resources/Public/Images/BackendLayouts/workview.png
+		icon = EXT:ubma_digitalcollections/Resources/Public/Images/BackendLayouts/workview.png
 	}
 }

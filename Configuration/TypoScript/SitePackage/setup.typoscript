@@ -63,6 +63,12 @@ page {
 
             rootPageCssClass = TEXT
             rootPageCssClass.value = {$config.kitodo.rootPage.cssClass}
+
+            oaiPageId = TEXT
+            oaiPageId.value = {$config.kitodo.oaiPage.pid}
+
+            searchPageId = TEXT
+            searchPageId.value = {$config.kitodo.searchPage.pid}
         }
     }
 

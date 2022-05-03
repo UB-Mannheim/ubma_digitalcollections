@@ -2,11 +2,11 @@
 <f:form section="showResults" action="search" name="searchParameter" method="post" class="tx-dlf-search-form">
    <div>
       <!-- Never change the @id of this input field! Otherwise search suggestions won't work! -->
-      <label for="tx-dlf-search-query"><f:translate key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:form.query' extensionName='slub_digitalcollections' />
+      <label for="tx-dlf-search-query"><f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:form.query' extensionName='ubma_digitalcollections' />
       </label>
-      <f:form.textfield type="text" id="tx-dlf-search-query" property="query" value="{lastSearch.query}" placeholder="{f:translate(key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:form.query', extensionName='slub_digitalcollections')}"></f:form.textfield>
-      <button type="submit" title="{f:translate(key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:form.search', extensionName='slub_digitalcollections')}">
-         <f:translate key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:form.search' extensionName='slub_digitalcollections' />
+      <f:form.textfield type="text" id="tx-dlf-search-query" property="query" value="{lastSearch.query}" placeholder="{f:translate(key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:form.query', extensionName='ubma_digitalcollections')}"></f:form.textfield>
+      <button type="submit" title="{f:translate(key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:form.search', extensionName='ubma_digitalcollections')}">
+         <f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:form.search' extensionName='ubma_digitalcollections' />
       </button>
 
       <div class="fulltext-switch">
@@ -28,31 +28,31 @@
    <p class="tx-dlf-search-numHits">Die Suche ergab {rawResults->f:count()} Treffer in {allDocuments} Dokumenten.</p>
    <p class="tx-dlf-sortinfo">
       <f:translate
-         key="LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:sortinfo"
+         key="LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:sortinfo"
          arguments="{0:'{pageOffset + 1}',1:'{f:if(condition: \'{numDocuments} > {allDocuments}\', then: \'{allDocuments}\', else: \'{numDocuments}\')}', 2:'{allDocuments}'}" />
    </p>
 
    <f:form section="showResults" action="search" name="searchParameter" method="post" class="tx-dlf-search-form">
       <div>
          <label for="form-orderBy">
-            <f:translate key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:form.orderBy' extensionName='slub_digitalcollections' />
+            <f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:form.orderBy' extensionName='ubma_digitalcollections' />
          </label>
          <f:form.select id="form-orderBy" property="orderBy" value="{lastSearch.orderBy}" onclick="javascript:this.form.submit();">
             <f:for each="{metadata}" as="meta">
                <f:form.select.option value="{meta.indexName}_usi">
-                  <f:translate key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:metadata.{meta.indexName}' extensionName='slub_digitalcollections' />
+                  <f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:metadata.{meta.indexName}' extensionName='ubma_digitalcollections' />
                </f:form.select.option>
             </f:for>
          </f:form.select>
          <label for="form-order">
-            <f:translate key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:form.order' extensionName='slub_digitalcollections' />
+            <f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:form.order' extensionName='ubma_digitalcollections' />
          </label>
          <f:form.select id="form-order" property="order" value="{lastSearch.order}" onclick="javascript:this.form.submit();">
             <f:form.select.option value="asc">
-               <f:translate key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:form.order.asc' extensionName='slub_digitalcollections' />
+               <f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:form.order.asc' extensionName='ubma_digitalcollections' />
             </f:form.select.option>
             <f:form.select.option value="desc">
-               <f:translate key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:form.order.desc' extensionName='slub_digitalcollections' />
+               <f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:form.order.desc' extensionName='ubma_digitalcollections' />
             </f:form.select.option>
          </f:form.select>
          <f:form.hidden property="collections" value="{settings.collections}" />
@@ -77,13 +77,13 @@
                      </f:if>
                   </div>
                   <dl>
-                     <dt class="tx-dlf-title"><f:translate key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:metadata.title' extensionName='slub_digitalcollections' /></dt>
+                     <dt class="tx-dlf-title"><f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:metadata.title' extensionName='ubma_digitalcollections' /></dt>
                      <dd class="tx-dlf-title">{docTitle}</dd>
                      <f:for each="{document.metadata}" as="metadata" key="label">
 
                         <f:if condition="{label} && {metadata.0} && {label} != 'type' && {label} != 'title'">
 
-                           <dt class="tx-dlf-{label}"><f:translate key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:metadata.{label}' extensionName='slub_digitalcollections' /></dt>
+                           <dt class="tx-dlf-{label}"><f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:metadata.{label}' extensionName='ubma_digitalcollections' /></dt>
                            <f:if condition="{label} == 'year'">
                               <f:then>
                                  <f:comment>Todo: ViewHelper to check given date string and format with f:format.date if possible</f:comment>
@@ -95,9 +95,9 @@
                            </f:if>
                         </f:if>
                      </f:for>
-                     <dt class="tx-dlf-type"><f:translate key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:structure' extensionName='slub_digitalcollections' /></dt>
+                     <dt class="tx-dlf-type"><f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:structure' extensionName='ubma_digitalcollections' /></dt>
                      <dd class="tx-dlf-type">
-                        <f:translate key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:structure.{document.structure}' extensionName='slub_digitalcollections' />
+                        <f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:structure.{document.structure}' extensionName='ubma_digitalcollections' />
                      </dd>
                   </dl>
                </f:link.page>
@@ -133,17 +133,17 @@
                                        </f:if>
                                     </div>
                                     <dl>
-                                       <dt class="tx-dlf-title"><f:translate key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:metadata.title' extensionName='slub_digitalcollections' /></dt>
+                                       <dt class="tx-dlf-title"><f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:metadata.title' extensionName='ubma_digitalcollections' /></dt>
                                        <dd class="tx-dlf-title">{f:if(condition:'{child.title}', then:'{child.title}', else:'[{document.title}]')}</dd>
                                        <f:for each="{child.metadata}" as="metadata" key="label">
                                           <f:if condition="{label} && {metadata.0} && {label} != 'type' && {label} != 'title'">
-                                             <dt class="tx-dlf-{label}"><f:translate key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:metadata.{label}' extensionName='slub_digitalcollections' /></dt>
+                                             <dt class="tx-dlf-{label}"><f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:metadata.{label}' extensionName='ubma_digitalcollections' /></dt>
                                              <dd>{metadata.0}</dd>
                                           </f:if>
                                        </f:for>
-                                       <dt class="tx-dlf-type"><f:translate key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:structure' extensionName='slub_digitalcollections' /></dt>
+                                       <dt class="tx-dlf-type"><f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:structure' extensionName='ubma_digitalcollections' /></dt>
                                        <dd class="tx-dlf-type">
-                                          <f:translate key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:structure.{child.structure}' extensionName='slub_digitalcollections' />
+                                          <f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:structure.{child.structure}' extensionName='ubma_digitalcollections' />
                                        </dd>
                                     </dl>
                                  </f:link.page>
@@ -172,11 +172,11 @@
                                  <div class="tx-dlf-listview-preview">
                                     <f:if condition="{result.structure} && {result.title}">
                                        <f:then>
-                                          <p class="page"><f:translate key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:structure.{result.structure}' extensionName='slub_digitalcollections' />: {result.title}</p>
-                                          <p><f:translate key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:structure.page' extensionName='slub_digitalcollections' /> {result.page}</p>
+                                          <p class="page"><f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:structure.{result.structure}' extensionName='ubma_digitalcollections' />: {result.title}</p>
+                                          <p><f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:structure.page' extensionName='ubma_digitalcollections' /> {result.page}</p>
                                        </f:then>
                                        <f:else>
-                                          <p class="page"><f:translate key='LLL:EXT:slub_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:structure.page' extensionName='slub_digitalcollections' /> {result.page}</p>
+                                          <p class="page"><f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:structure.page' extensionName='ubma_digitalcollections' /> {result.page}</p>
                                        </f:else>
                                     </f:if>
                                     <f:for each="{result.highlighting}" as="highlighting">

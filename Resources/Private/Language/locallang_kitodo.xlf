@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" datatype="plaintext" original="messages" date="2020-12-13T20:22:07Z" product-name="slub_digitalcollections">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-12-13T20:22:07Z" product-name="ubma_digitalcollections">
 		<header/>
 		<body>
 			<trans-unit id="structure" xml:space="preserve">
