@@ -346,7 +346,7 @@ class KitodoDocumentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     private function getSolrCache(string $query) {
 
         $cacheIdentifier = md5($query);
-        $cache = GeneralUtility::makeInstance(CacheManager::class)->getCache('slub_digitalcollections_collections');
+        $cache = GeneralUtility::makeInstance(CacheManager::class)->getCache('ubma_digitalcollections_collections');
         $cacheHit = $cache->get($cacheIdentifier);
 
         return $cacheHit;
@@ -362,7 +362,7 @@ class KitodoDocumentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     private function setSolrCache(string $query, array $value) {
 
         $cacheIdentifier = md5($query);
-        $cache = GeneralUtility::makeInstance(CacheManager::class)->getCache('slub_digitalcollections_collections');
+        $cache = GeneralUtility::makeInstance(CacheManager::class)->getCache('ubma_digitalcollections_collections');
 
         // Save value in cache
         $cache->set($cacheIdentifier, $value);
