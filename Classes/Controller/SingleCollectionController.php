@@ -1,5 +1,5 @@
 <?php
-namespace Slub\SlubDigitalcollections\Controller;
+namespace Slub\UbmaDigitalcollections\Controller;
 
 /***************************************************************
  *  Copyright notice
@@ -26,43 +26,43 @@ namespace Slub\SlubDigitalcollections\Controller;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 use Kitodo\Dlf\Common\Document;
-use Slub\SlubDigitalcollections\Domain\Repository\KitodoDocumentRepository;
-use Slub\SlubDigitalcollections\Domain\Repository\KitodoStructuresRepository;
-use Slub\SlubDigitalcollections\Domain\Repository\KitodoCollectionsRepository;
-use Slub\SlubDigitalcollections\Domain\Repository\KitodoMetadataRepository;
+use Slub\UbmaDigitalcollections\Domain\Repository\KitodoDocumentRepository;
+use Slub\UbmaDigitalcollections\Domain\Repository\KitodoStructuresRepository;
+use Slub\UbmaDigitalcollections\Domain\Repository\KitodoCollectionsRepository;
+use Slub\UbmaDigitalcollections\Domain\Repository\KitodoMetadataRepository;
 
 class SingleCollectionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     /**
      * kitodoDocumentRepository
      *
-     * @var \Slub\SlubDigitalcollections\Domain\Repository\KitodoDocumentRepository
+     * @var \Slub\UbmaDigitalcollections\Domain\Repository\KitodoDocumentRepository
      */
     protected $kitodoDocumentRepository;
 
     /**
      * kitodoStructuresRepository
      *
-     * @var \Slub\SlubDigitalcollections\Domain\Repository\KitodoStructuresRepository
+     * @var \Slub\UbmaDigitalcollections\Domain\Repository\KitodoStructuresRepository
      */
     protected $kitodoStructuresRepository;
 
     /**
      * kitodoCollectionsRepository
      *
-     * @var \Slub\SlubDigitalcollections\Domain\Repository\KitodoCollectionsRepository
+     * @var \Slub\UbmaDigitalcollections\Domain\Repository\KitodoCollectionsRepository
      */
     protected $kitodoCollectionsRepository;
 
     /**
      * kitodoMetadataRepository
      *
-     * @var \Slub\SlubDigitalcollections\Domain\Repository\KitodoMetadataRepository
+     * @var \Slub\UbmaDigitalcollections\Domain\Repository\KitodoMetadataRepository
      */
     protected $kitodoMetadataRepository;
 
     /**
-     * @param \Slub\SlubDigitalcollections\Domain\Repository\KitodoDocumentRepository $kitodoDocumentRepository
+     * @param \Slub\UbmaDigitalcollections\Domain\Repository\KitodoDocumentRepository $kitodoDocumentRepository
      */
     public function injectKitodoDocumentRepository(KitodoDocumentRepository $kitodoDocumentRepository)
     {
@@ -70,7 +70,7 @@ class SingleCollectionController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     }
 
 	/**
-     * @param \Slub\SlubDigitalcollections\Domain\Repository\KitodoStructuresRepository $kitodoStructuresRepository
+     * @param \Slub\UbmaDigitalcollections\Domain\Repository\KitodoStructuresRepository $kitodoStructuresRepository
      */
     public function injectKitodoStructuresRepository(KitodoStructuresRepository $kitodoStructuresRepository)
     {
@@ -78,7 +78,7 @@ class SingleCollectionController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     }
 
 	/**
-     * @param \Slub\SlubDigitalcollections\Domain\Repository\KitodoCollectionsRepository $kitodoCollectionsRepository
+     * @param \Slub\UbmaDigitalcollections\Domain\Repository\KitodoCollectionsRepository $kitodoCollectionsRepository
      */
     public function injectKitodoCollectionsRepository(KitodoCollectionsRepository $kitodoCollectionsRepository)
     {
@@ -86,7 +86,7 @@ class SingleCollectionController extends \TYPO3\CMS\Extbase\Mvc\Controller\Actio
     }
 
 	/**
-     * @param \Slub\SlubDigitalcollections\Domain\Repository\KitodoMetadataRepository $kitodoMetadataRepository
+     * @param \Slub\UbmaDigitalcollections\Domain\Repository\KitodoMetadataRepository $kitodoMetadataRepository
      */
     public function injectKitodoMetadataRepository(KitodoMetadataRepository $kitodoMetadataRepository)
     {

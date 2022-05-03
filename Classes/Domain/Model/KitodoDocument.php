@@ -1,5 +1,5 @@
 <?php
-namespace Slub\SlubDigitalcollections\Domain\Model;
+namespace Slub\UbmaDigitalcollections\Domain\Model;
 
 /***************************************************************
  *  Copyright notice
@@ -79,21 +79,21 @@ class KitodoDocument extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject
     /**
      * structure
      *
-     * @var \Slub\SlubDigitalcollections\Domain\Model\KitodoStructures
+     * @var \Slub\UbmaDigitalcollections\Domain\Model\KitodoStructures
      */
     protected $structure;
 
     /**
      * Parent Document
      *
-     * @var \Slub\SlubDigitalcollections\Domain\Model\KitodoDocument
+     * @var \Slub\UbmaDigitalcollections\Domain\Model\KitodoDocument
      */
     protected $partof;
 
     /**
      * Child documents
      *
-     * @var array \Slub\SlubDigitalcollections\Domain\Model\KitodoDocument
+     * @var array \Slub\UbmaDigitalcollections\Domain\Model\KitodoDocument
      */
     protected $children;
 
@@ -231,7 +231,7 @@ class KitodoDocument extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject
     /**
      * Returns the child documents
      *
-     * @return array \Slub\SlubDigitalcollections\Domain\Model\KitodoDocument $children
+     * @return array \Slub\UbmaDigitalcollections\Domain\Model\KitodoDocument $children
      */
     public function getChildren() {
         return $this->children;

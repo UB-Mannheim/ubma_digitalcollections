@@ -1,5 +1,5 @@
 <?php
-namespace Slub\SlubDigitalcollections\ViewHelpers;
+namespace Slub\UbmaDigitalcollections\ViewHelpers;
 
 /***************************************************************
  *  Copyright notice
@@ -110,6 +110,7 @@ class XpathViewHelper extends AbstractViewHelper
         $document->getDoc()->mets->registerXPathNamespace('mods', 'http://www.loc.gov/mods/v3');
         $document->getDoc()->mets->registerXPathNamespace('dv', 'http://dfg-viewer.de/');
         $document->getDoc()->mets->registerXPathNamespace('slub', 'http://slub-dresden.de/');
+        $document->getDoc()->mets->registerXPathNamespace('ubma', 'http://digi.bib.uni-mannheim.de/');
 
         $result = $document->getDoc()->mets->xpath($xpath);
 
