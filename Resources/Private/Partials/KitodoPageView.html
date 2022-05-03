@@ -1,5 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      xmlns:dc="http://typo3.org/ns/Slub/UbmaDigitalcollections/ViewHelpers"
+      xmlns:dc="http://typo3.org/ns/Ubma/UbmaDigitalcollections/ViewHelpers"
       data-namespace-typo3-fluid="true"
       lang="en">
 
@@ -175,12 +175,12 @@
               </f:if>
 
               <f:comment><!-- [catalouge search ] ----------------------------- --></f:comment>
-              <f:if condition="<dc:xpath xpath='(//mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:extension/slub:slub/slub:id[@type=\"digital\"])' />">
+              <f:if condition="<dc:xpath xpath='(//mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:extension/ubma:ubma/ubma:id[@type=\"digital\"])' />">
                 <f:then>
                   <f:comment><!-- the SLUB catalogue way --></f:comment>
                   <li>
                     <f:link.external
-                      uri="https://katalog.slub-dresden.de/ppn/<dc:xpath xpath='(//mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:extension/slub:slub/slub:id[@type=\"digital\"])' />"
+                      uri="https://katalog.slub-dresden.de/ppn/<dc:xpath xpath='(//mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:extension/ubma:ubma/ubma:id[@type=\"digital\"])' />"
                       class="local-catalog"
                       target="_blank"
                       title="<f:translate key='provider.slub_catalogue' extensionName='ubma_digitalcollections' />">
@@ -349,10 +349,10 @@
 
                 <f:comment><!-- [IIIF downloads (JSON)] -------------------------- --></f:comment>
                 <f:if condition="{dc:xpath(xpath:'(/mets:mets/mets:fileSec/mets:fileGrp[@USE=\"DEFAULT\"]/mets:file/mets:FLocat/@xlink:href)[1]')}">
-                  <f:if condition="{dc:xpath(xpath: '//mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:extension/slub:slub/slub:id[@type=\"digital\"]')}">
+                  <f:if condition="{dc:xpath(xpath: '//mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:extension/ubma:ubma/ubma:id[@type=\"digital\"]')}">
                     <li class="iiif-download">
                       <f:link.external
-                        uri="https://iiif.slub-dresden.de/iiif/2/{dc:xpath(xpath: '//mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:extension/slub:slub/slub:id[@type=\"digital\"]')}/manifest.json"
+                        uri="https://iiif.slub-dresden.de/iiif/2/{dc:xpath(xpath: '//mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:extension/ubma:ubma/ubma:id[@type=\"digital\"]')}/manifest.json"
                         class="download-page iiif"
                         target="_blank"
                         title="{f:translate(key: 'download.iiif', extensionName='ubma_digitalcollections')}"><f:translate key="download.iiif" extensionName="ubma_digitalcollections" />

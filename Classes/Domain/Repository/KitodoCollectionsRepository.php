@@ -1,5 +1,5 @@
 <?php
-namespace Slub\UbmaDigitalcollections\Domain\Repository;
+namespace Ubma\UbmaDigitalcollections\Domain\Repository;
 
 /***************************************************************
  *  Copyright notice

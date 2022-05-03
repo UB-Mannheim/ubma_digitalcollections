@@ -125,9 +125,9 @@
 				<source><![CDATA[Online Public Access Catalogue]]></source>
 				<target><![CDATA[Lokaler Katalog]]></target>
 			</trans-unit>
-			<trans-unit id="provider.slub_catalogue" approved="yes">
-				<source><![CDATA[SLUB Catalogue]]></source>
-				<target><![CDATA[SLUB Katalog]]></target>
+			<trans-unit id="provider.ubma_catalogue" approved="yes">
+				<source><![CDATA[UBMA Catalogue]]></source>
+				<target><![CDATA[UBMA Katalog]]></target>
 			</trans-unit>
 			<trans-unit id="purl.document" approved="yes">
 				<source><![CDATA[Permalink document]]></source>

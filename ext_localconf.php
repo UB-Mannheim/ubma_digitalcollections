@@ -3,7 +3,7 @@ defined('TYPO3_MODE') or die();
 
 // plugins
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'Slub.UbmaDigitalcollections',
+    'Ubma.UbmaDigitalcollections',
     'SingleCollection',
     [
         'SingleCollection' => 'show,search'

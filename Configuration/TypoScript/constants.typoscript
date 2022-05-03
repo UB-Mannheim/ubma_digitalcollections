@@ -6,31 +6,31 @@ config {
 
         # basic solr config
         solr {
-            # cat=plugin.tx_slubdigitalcollections/links/0200; type=int+; label= solr core uid
+            # cat=plugin.tx_ubmadigitalcollections/links/0200; type=int+; label= solr core uid
             core = 1
 
-            # cat=plugin.tx_slubdigitalcollections/links/0201; type=int+; label= solr search query limit
+            # cat=plugin.tx_ubmadigitalcollections/links/0201; type=int+; label= solr search query limit
             searchLimit = 1000
 
-            # cat=plugin.tx_slubdigitalcollections/links/0202; type=string; label= solr url including scheme, port and path
+            # cat=plugin.tx_ubmadigitalcollections/links/0202; type=string; label= solr url including scheme, port and path
             host = http://sdvsolr2.slub-dresden.de:8983/solr
 
-            # cat=plugin.tx_slubdigitalcollections/links/0203; type=string; label= solr core name
+            # cat=plugin.tx_ubmadigitalcollections/links/0203; type=string; label= solr core name
             coreName = dlfCore0
 
-            # cat=plugin.tx_slubdigitalcollections/links/0204; type=int+; label= solr connection timeout (s)
+            # cat=plugin.tx_ubmadigitalcollections/links/0204; type=int+; label= solr connection timeout (s)
             timeout = 5
         }
 
         # basic id config
         rootPage {
-            # cat=plugin.tx_slubdigitalcollections/links/0300; type=int+; label= Kitodo Rootpage
+            # cat=plugin.tx_ubmadigitalcollections/links/0300; type=int+; label= Kitodo Rootpage
             pid  = 5346
 
-            # cat=plugin.tx_slubdigitalcollections/links/0301; type=string; label= Kitodo Title
+            # cat=plugin.tx_ubmadigitalcollections/links/0301; type=string; label= Kitodo Title
             title = Digitale Sammlungen
 
-            # cat=plugin.tx_slubdigitalcollections/links/0302; type=string; label= Kitodo CSS-class
+            # cat=plugin.tx_ubmadigitalcollections/links/0302; type=string; label= Kitodo CSS-class
             cssClass = dlf-ubma-logo
         }
 
@@ -46,46 +46,46 @@ config {
             pid  = 6
         }
 
-        # cat=plugin.tx_slubdigitalcollections/links/0320; type=int+; label=Kitodo.Presentation (dlf) Storage Pid
+        # cat=plugin.tx_ubmadigitalcollections/links/0320; type=int+; label=Kitodo.Presentation (dlf) Storage Pid
         storagePid = 4152
 
-        # cat=plugin.tx_slubdigitalcollections/links/0321; type=int+; label= Kitodo Terms of Use Page
+        # cat=plugin.tx_ubmadigitalcollections/links/0321; type=int+; label= Kitodo Terms of Use Page
         termsOfUsePid =
 
-        # cat=plugin.tx_slubdigitalcollections/links/0322; type=list; label= Pids for Navigation
+        # cat=plugin.tx_ubmadigitalcollections/links/0322; type=list; label= Pids for Navigation
         viewerNavigationPids = 4010, 5346, 9259, 4012, 10105
 
-        # cat=plugin.tx_slubdigitalcollections/links/0323; type=int+; label= Kitodo Pageview
+        # cat=plugin.tx_ubmadigitalcollections/links/0323; type=int+; label= Kitodo Pageview
         pageView = 5363
 
-        # cat=plugin.tx_slubdigitalcollections/links/0324; type=int+; label= pagegrid limit (thumbnail preview)
+        # cat=plugin.tx_ubmadigitalcollections/links/0324; type=int+; label= pagegrid limit (thumbnail preview)
         pagegrid.limit = 35
 
-        # cat=plugin.tx_slubdigitalcollections/links/0325; type=int+; label= Kitodo Collection Page
+        # cat=plugin.tx_ubmadigitalcollections/links/0325; type=int+; label= Kitodo Collection Page
         collectionView = 5362
 
-        # cat=plugin.tx_slubdigitalcollections/links/0326; type=int+; label= Kitodo List Page
+        # cat=plugin.tx_ubmadigitalcollections/links/0326; type=int+; label= Kitodo List Page
         listView = 5364
 
         css {
-            # cat=plugin.tx_slubdigitalcollections/advanced/0500; type=string; label=CSS file for optional base website design
+            # cat=plugin.tx_ubmadigitalcollections/advanced/0500; type=string; label=CSS file for optional base website design
             base = EXT:ubma_digitalcollections/Resources/Public/Css/BaseDesign.css
 
-            # cat=plugin.tx_slubdigitalcollections/advanced/0501; type=string; label=CSS file for all lists (eg. collections)
+            # cat=plugin.tx_ubmadigitalcollections/advanced/0501; type=string; label=CSS file for all lists (eg. collections)
             lists = EXT:ubma_digitalcollections/Resources/Public/Css/DigitalcollectionsLists.css
 
-            # cat=plugin.tx_slubdigitalcollections/advanced/0502; type=string; label=CSS file for Kitodo pageview
+            # cat=plugin.tx_ubmadigitalcollections/advanced/0502; type=string; label=CSS file for Kitodo pageview
             pageview = EXT:ubma_digitalcollections/Resources/Public/Css/Digitalcollections.css
         }
 
     }
 
     # matomo configuration (maybe overwritten)
-    # cat=plugin.tx_slubdigitalcollections/piwik/0310; type=string; label=Matomo Hostname
+    # cat=plugin.tx_ubmadigitalcollections/piwik/0310; type=string; label=Matomo Hostname
     piwik_hostname = matomo.slub-dresden.de
-    # cat=plugin.tx_slubdigitalcollections/piwik/0320; type=int+; label=Matomo Idsite
+    # cat=plugin.tx_ubmadigitalcollections/piwik/0320; type=int+; label=Matomo Idsite
     piwik_idsite =
-    # cat=plugin.tx_slubdigitalcollections/piwik/0330; type=string; label=Matomo Domains (optional)
+    # cat=plugin.tx_ubmadigitalcollections/piwik/0330; type=string; label=Matomo Domains (optional)
     piwik_domains = *.bib.uni-mannheim.de
 
     # template path config

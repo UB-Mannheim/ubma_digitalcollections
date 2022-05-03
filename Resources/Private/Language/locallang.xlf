@@ -83,8 +83,8 @@
 			<trans-unit id="provider.local_catalogue">
 				<source><![CDATA[Online Public Access Catalogue]]></source>
 			</trans-unit>
-			<trans-unit id="provider.slub_catalogue">
-				<source><![CDATA[SLUB Catalogue]]></source>
+			<trans-unit id="provider.ubma_catalogue">
+				<source><![CDATA[UBMA Catalogue]]></source>
 			</trans-unit>
 			<trans-unit id="purl.document">
 				<source><![CDATA[Permalink document]]></source>
