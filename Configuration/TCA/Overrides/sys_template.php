@@ -3,14 +3,14 @@ defined('TYPO3_MODE') or die();
 
 // Add default Typoscript
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-    'slub_digitalcollections',
+    'ubma_digitalcollections',
     'Configuration/TypoScript',
-    'SLUB Digital Collections'
+    'UBMA Digital Collections'
 );
 
 // Add optional SitePackage Typoscript
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-    'slub_digitalcollections',
+    'ubma_digitalcollections',
     'Configuration/TypoScript/SitePackage',
-    'Optional Sitepackage for pure usage of SLUB Digital Collections.'
+    'Optional Sitepackage for pure usage of UBMA Digital Collections.'
 );

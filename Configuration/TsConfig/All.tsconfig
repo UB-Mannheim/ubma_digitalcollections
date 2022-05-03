@@ -1,4 +1,4 @@
 #
-# PageTS for SLUB Digitalcollections
+# PageTS for UBMA Digitalcollections
 #
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:slub_digitalcollections/Configuration/TsConfig/Mod/" extensions="tsconfig">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:ubma_digitalcollections/Configuration/TsConfig/Mod/" extensions="tsconfig">
