@@ -53,7 +53,7 @@
                     <f:comment>
                       <!-- example markup for future logo display -->
                       <ul class="tx-dlf-logobar">
-                            <li><img src="/typo3conf/ext/ubma_digitalcollections/Static/data/slublogo.jpg" alt="Logo SLUB"></li>
+                            <li><img src="/typo3conf/ext/ubma_digitalcollections/Static/data/ubmalogo.jpg" alt="Logo UBMA"></li>
                             <li><img src="/typo3conf/ext/ubma_digitalcollections/Static/data/unierfurtlogo.png" alt="Logo Uni Erfurt"></li>
                             <li><img src="/typo3conf/ext/ubma_digitalcollections/Static/data/dfglogo.svg" alt="Logo DFG"></li>
                       </ul>
@@ -177,14 +177,14 @@
               <f:comment><!-- [catalouge search ] ----------------------------- --></f:comment>
               <f:if condition="<dc:xpath xpath='(//mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:extension/ubma:ubma/ubma:id[@type=\"digital\"])' />">
                 <f:then>
-                  <f:comment><!-- the SLUB catalogue way --></f:comment>
-                  <li>
+                  <f:comment><!-- the UBMA catalogue way --></f:comment>
+                  <li class="primo-link-klaeren">
                     <f:link.external
                       uri="https://katalog.slub-dresden.de/ppn/<dc:xpath xpath='(//mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:extension/ubma:ubma/ubma:id[@type=\"digital\"])' />"
                       class="local-catalog"
                       target="_blank"
-                      title="<f:translate key='provider.slub_catalogue' extensionName='ubma_digitalcollections' />">
-                      <f:translate key='provider.slub_catalogue' extensionName='ubma_digitalcollections' />
+                      title="<f:translate key='provider.ubma_catalogue' extensionName='ubma_digitalcollections' />">
+                      <f:translate key='provider.ubma_catalogue' extensionName='ubma_digitalcollections' />
                     </f:link.external>
                   </li>
                 </f:then>
@@ -192,7 +192,7 @@
                   <f:comment><!-- the DFG-Viewer way --></f:comment>
                   <f:for each="{0: '1', 1: '2', 2: '3'}" as="index">
                     <f:if condition="<dc:xpath xpath='(//mets:amdSec/mets:digiprovMD/mets:mdWrap[@OTHERMDTYPE=\"DVLINKS\"]/mets:xmlData/dv:links/dv:reference)[{index}]' />">
-                      <li>
+                      <li class="swb-link">
                         <f:if condition="<dc:xpath xpath='(//mets:amdSec/mets:digiprovMD/mets:mdWrap[@OTHERMDTYPE=\"DVLINKS\"]/mets:xmlData/dv:links/dv:reference/@linktext)[{index}]' />">
                           <f:then>
                             <f:link.external
@@ -219,6 +219,83 @@
                 </f:else>
               </f:if>
 
+
+
+
+                <f:comment><!-- [DFG-Viewer] -------------------------- --></f:comment>
+                <f:comment>This didn't work in ddev environment</f:comment>
+                <f:if condition="{f:uri.page(pageUid: '{oaiPageId}', absolute: 1)} != 'https://ddev-kitodo-presentation.ddev.site/oai'">
+          <f:then>
+            <f:variable
+              name= "oai-page"
+              value="{f:uri.page(
+                    pageUid: '{oaiPageId}',
+                    absolute: 1
+                  )}"
+            />
+          </f:then>
+          <f:else>
+            <f:comment>This work in ddev environment</f:comment>
+            {f:variable(name: 'oai-page', value: 'https://digi.bib.uni-mannheim.de/oai/')}
+          </f:else>
+                </f:if>
+
+                <f:if condition="<dc:xpath xpath='/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:recordInfo/mods:recordIdentifier/@source' /> == 'maub'">
+                    <f:then>
+                        <f:comment><!-- if maub --></f:comment>
+                        <li class="dfg-viewer">
+                        <f:comment> oai from ddev </f:comment>
+
+                                  <f:comment>uri="<dc:xpath xpath='(//mets:fileSec/mets:fileGrp{usedFileGrp}//mets:file/mets:FLocat/@xlink:href)[{gp-page2}]' />{f:if(condition:\"{mimeType}=='application/vnd.kitodo.iiif'\", then:'/full/full/0/default.jpg')}"                                </f:comment>
+
+              <f:link.external
+                uri="https://dfg-viewer.de/show/?tx_dlf%5Bid%5D=<f:format.urlencode>{oai-page}?verb=GetRecord&metadataPrefix=mets&identifier=</f:format.urlencode><dc:xpath xpath='(//mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:recordInfo/mods:recordIdentifier)' />"
+                class="local-catalog"
+                target="_blank"
+                title="DFG-Viewer">
+                DFG-Viewer
+              </f:link.external>
+
+
+
+                        </li>
+                    </f:then>
+                    <f:else if="<dc:xpath xpath='/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:recordInfo/mods:recordIdentifier/@source' /> == 'swb-ppn'">
+                        <f:comment><!-- if maub not exist swb-ppn --></f:comment>
+                        <li class="dfg-viewer">
+                        <f:comment> oai from ddev  <f:uri.page pageUid="{oaiPageId}" /> </f:comment>
+
+              <f:link.external
+                uri="https://dfg-viewer.de/show/?tx_dlf%5Bid%5D=<f:format.urlencode>{oai-page}?verb=GetRecord&metadataPrefix=mets&identifier=</f:format.urlencode><dc:xpath xpath='(//mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:recordInfo/mods:recordIdentifier)' />"
+                class="local-catalog"
+                target="_blank"
+                title="DFG-Viewer">
+                DFG-Viewer
+              </f:link.external>
+
+                        </li>
+                    </f:else>
+                    <f:else>
+                        <f:if condition="<dc:xpath xpath='/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:recordInfo/mods:recordIdentifier/@source' /> == 'http://digital.slub-dresden.de/oai/'">
+                            <f:then>
+                                <f:comment><!-- access via OAI does only work for bib.uni-mannheim.de -> access of the location field would be better -------------------------- --></f:comment>
+                                <li class="mets-download">
+                                <f:comment> oai from ddev </f:comment>
+                                <f:link.page pageUid="{oaiPageId}"
+                                        class="local-catalog"
+                                        target="_blank"
+                                        additionalParams="{verb: 'GetRecord', metadataPrefix: 'mets', identifier: '<dc:xpath xpath=\'(//mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:recordInfo/mods:recordIdentifier)\' />'}"
+                                        title="DFG-Viewer">DFG-Viewer</f:link.page>
+                                </li>
+                            </f:then>
+                        </f:if>
+                    </f:else>
+                </f:if>
+
+
+
+
+
               <f:comment><!-- [License informations] ------------------------------ --></f:comment>
               <f:if condition="{settings.termsOfUsePid}">
                 <li class="license">
@@ -237,9 +314,9 @@
           <li class="submenu downloads">
             <a href="#" title="Downloads">Downloads</a>
             <ul>
-                <li class="pdf-download has-multilinks">
-                    <f:cObject typoscriptObjectPath="plugin.tx_dlf_pdfdownloadtool" />
-                </li>
+              <f:comment><!-- [Page downloads (PDF)] ------------------------------ --></f:comment>
+              <li class="pdf-download has-multilinks">
+                  <f:cObject typoscriptObjectPath="plugin.tx_dlf_pdfdownloadtool" />
               </li>
 
               <f:comment><!-- [Image downloads (JPG)] ----------------------------- --></f:comment>
@@ -261,17 +338,18 @@
               <f:if condition="{gp-double} == 1">
                   <f:then>
                       <li class="jpg-download has-multilinks">
+                          <span class="multilink-label"><f:translate key="download.image.imageDownload" extensionName="ubma_digitalcollections" /></span>
                           <div class="multilinks">
                               <f:link.external
                                   uri="<dc:xpath xpath='(//mets:fileSec/mets:fileGrp{usedFileGrp}//mets:file/mets:FLocat/@xlink:href)[{gp-page}]' />{f:if(condition:\"{mimeType}=='application/vnd.kitodo.iiif'\", then:'/full/full/0/default.jpg')}"
-                                  class="download-document image left"
+                                  class="download-page image left"
                                   target="_blank"
                                   title="<f:translate key='download.image.leftPage' extensionName='ubma_digitalcollections' />">
                                     <f:translate key="download.image.leftPage" extensionName="ubma_digitalcollections" />
                               </f:link.external>
                               <f:link.external
                                   uri="<dc:xpath xpath='(//mets:fileSec/mets:fileGrp{usedFileGrp}//mets:file/mets:FLocat/@xlink:href)[{gp-page2}]' />{f:if(condition:\"{mimeType}=='application/vnd.kitodo.iiif'\", then:'/full/full/0/default.jpg')}"
-                                  class="download-document image right"
+                                  class="download-page image right"
                                   target="_blank"
                                   title="<f:translate key='download.image.rightPage' extensionName='ubma_digitalcollections' />">
                                     <f:translate key="download.image.rightPage" extensionName="ubma_digitalcollections" />
@@ -283,7 +361,7 @@
                     <li class="jpg-download">
                       <f:link.external
                           uri="<dc:xpath xpath='(//mets:fileSec/mets:fileGrp{usedFileGrp}//mets:file/mets:FLocat/@xlink:href)[{gp-page}]' />{f:if(condition:\"{mimeType}=='application/vnd.kitodo.iiif'\", then:'/full/full/0/default.jpg')}"
-                          class="download-document image"
+                          class="download-page image"
                           target="_blank"
                           title="<f:translate key='download.image.singlePage' extensionName='ubma_digitalcollections' />">
                             <f:translate key="download.image.singlePage" extensionName="ubma_digitalcollections" />
@@ -297,6 +375,7 @@
                   <f:if condition="{gp-double} == 1">
                       <f:then>
                           <li class="xml-download has-multilinks">
+                              <span class="multilink-label"><f:translate key="download.fulltext.fulltextDownload" extensionName="ubma_digitalcollections" /></span>
                               <div class="multilinks">
                                   <f:link.external
                                       uri="<dc:xpath xpath='(//mets:fileSec/mets:fileGrp[@USE=\"FULLTEXT\"]//mets:file/mets:FLocat/@xlink:href)[{gp-page}]' />"
@@ -334,7 +413,32 @@
                 </f:if>
 
                 <f:comment><!-- [METS downloads (XML)] -------------------------- --></f:comment>
+                <f:if condition="<dc:xpath xpath='/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:recordInfo/mods:recordIdentifier/@source' /> == 'maub'">
+                    <f:then>
+                        <f:comment><!-- access via OAI does only work for bib.uni-mannheim.de -> access of the location field would be better -------------------------- --></f:comment>
+                        <li class="mets-download">
+                        <f:comment> oai from ddev </f:comment>
+                        <f:link.page pageUid="{oaiPageId}"
+                                class="download-document mets"
+                                target="_blank"
+                                additionalParams="{verb: 'GetRecord', metadataPrefix: 'mets', identifier: '<dc:xpath xpath=\'(//mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:recordInfo/mods:recordIdentifier)\' />'}"
+                                title="<f:translate key='download.mets' extensionName='ubma_digitalcollections' />"><f:translate key="download.mets" extensionName="ubma_digitalcollections" /></f:link.page>
+                        </li>
+                    </f:then>
+                    <f:else if="<dc:xpath xpath='/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:recordInfo/mods:recordIdentifier/@source' /> == 'swb-ppn'">
+                        <f:comment><!-- if maub not exist swb-ppn --></f:comment>
+                        <li class="mets-download">
+                        <f:comment> oai from ddev </f:comment>
+                        <f:link.page pageUid="{oaiPageId}"
+                                class="download-document mets"
+                                target="_blank"
+                                additionalParams="{verb: 'GetRecord', metadataPrefix: 'mets', identifier: '<dc:xpath xpath=\'(//mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:recordInfo/mods:recordIdentifier)\' />'}"
+                                title="<f:translate key='download.mets' extensionName='ubma_digitalcollections' />"><f:translate key="download.mets" extensionName="ubma_digitalcollections" /></f:link.page>
+                        </li>
+                    </f:else>
+                    <f:else>
                 <f:if condition="<dc:xpath xpath='/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:recordInfo/mods:recordIdentifier/@source' /> == 'http://digital.slub-dresden.de/oai/'">
+<f:comment>
                   <f:comment><!-- access via OAI does only work for slub-dresden.de -> access of the location field would be better -------------------------- --></f:comment>
                   <li class="mets-download">
                     <f:link.external
@@ -346,6 +450,23 @@
                     </f:link.external>
                   </li>
                 </f:if>
+</f:comment>
+
+                            <f:then>
+                                <f:comment><!-- access via OAI does only work for bib.uni-mannheim.de -> access of the location field would be better -------------------------- --></f:comment>
+                                <li class="mets-download">
+                                <f:comment> oai from ddev </f:comment>
+                                <f:link.page pageUid="{oaiPageId}"
+                                        class="download-document mets"
+                                        target="_blank"
+                                        additionalParams="{verb: 'GetRecord', metadataPrefix: 'mets', identifier: '<dc:xpath xpath=\'(//mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:recordInfo/mods:recordIdentifier)\' />'}"
+                                        title="<f:translate key='download.mets' extensionName='ubma_digitalcollections' />"><f:translate key="download.mets" extensionName="ubma_digitalcollections" /></f:link.page>
+                                </li>
+                            </f:then>
+                        </f:if>
+                    </f:else>
+                </f:if>
+
 
                 <f:comment><!-- [IIIF downloads (JSON)] -------------------------- --></f:comment>
                 <f:if condition="{dc:xpath(xpath:'(/mets:mets/mets:fileSec/mets:fileGrp[@USE=\"DEFAULT\"]/mets:file/mets:FLocat/@xlink:href)[1]')}">
@@ -438,6 +559,11 @@
     <f:comment><!-- [rotate and zoom buttons in page view] -------------------------- --></f:comment>
     <div class="view-functions">
       <f:if condition="{gp-pagegrid} == 1">
+        <f:then>
+        <ul>
+          <f:cObject typoscriptObjectPath="lib.kitodo.navigation.viewfunction_deactivated" />
+        </ul>
+        </f:then>
         <f:else>
           <ul>
             <f:cObject typoscriptObjectPath="lib.kitodo.navigation.viewfunction" />
