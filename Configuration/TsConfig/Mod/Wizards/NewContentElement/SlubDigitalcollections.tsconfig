@@ -17,3 +17,8 @@ mod.wizards.newContentElement.wizardItems {
     show = *
   }
 }
+
+TCEFORM.tt_content.frame_class.addItems {
+  search-form = Suchformular
+}
+
