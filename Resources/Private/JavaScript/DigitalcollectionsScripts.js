@@ -151,6 +151,8 @@ $(function () {
         $('.zoom .fullscreen').addClass('active');
     }
 
+    // Hint from Bernd Fallert: See no point in it, currently switched off until functionality is clarified 2022.04.01 13:00
+    /*
     // TOC folding function to make sure that active pages are in viewport
     if ($('ul.toc ul li.current')[0]) {
         tocPlaceholderLabel = ($('html[lang^="de"]')[0]) ? 'Einige Einträge sind ausgeblendet' : 'Some entires are hidden';
@@ -162,6 +164,7 @@ $(function () {
             $('ul.toc ul li').slideDown();
         });
     }
+    */
 
     // Toggle and setup for the 'in document search'
     if ($('.tx-dlf-toolsFulltextsearch form')[0]) {
