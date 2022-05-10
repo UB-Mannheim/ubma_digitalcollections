@@ -1,5 +1,5 @@
 {
-  "name": "UB-Mannheim/ubma-digitalcollections",
+  "name": "ub-mannheim/ubma-digitalcollections",
   "type": "typo3-cms-extension",
   "description": "Templates, Styles and Configuration for Kitodo.Presentation based Digital Collections by SLUB Dresden adapted to UL Mannheim",
   "homepage": "https://github.com/UB-Mannheim/ubma_digitalcollections.git",
@@ -33,7 +33,7 @@
   "license": "GPL-3.0-or-later",
   "require": {
     "typo3/cms-core": "~9.5|^10.4",
-    "kitodo/presentation": "^4.0|dev-master"
+    "ub-mannheim/presentation": "^4.0|dev-master"
   },
   "autoload": {
     "psr-4": {
