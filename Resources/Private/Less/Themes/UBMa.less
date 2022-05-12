@@ -188,6 +188,10 @@ body.listview {
     .tx-dlf-collection-thumbnail {
         a {
             border-bottom: none;
+
+            img {
+                height: auto;
+            }
         }
     }
 
@@ -233,6 +237,41 @@ body.listview {
         .tx-dlf-listview {
             p.tx-dlf-sortinfo {
                 margin-top: 22px;
+            }
+        }
+    }
+}
+
+.no-touchevents {
+    body.collections.ubma-body {
+        .main-column {
+            .tx-dlf-collection-list {
+                .tx-dlf-collection-col {
+                    .tx-dlf-collection-item {
+                        &:hover {
+                            .tx-dlf-collection-thumbnail {
+                                img {
+                                    transform: scale(1.2);
+                                    opacity: .8;
+                                }
+                            }
+                            .tx-dlf-collection-meta-information {
+                                //-webkit-transition: all .3s ease-out;
+                                //-o-transition: all .3s ease-out;
+                                //transition: all 3s ease-out;
+                                padding-bottom: 10px;
+                                top: -10px;
+                            }
+                        }
+                        .tx-dlf-collection-meta-information {
+                            right: 0;
+                            left: 0;
+                            padding: 10px;
+                            position: relative;
+                            transition: top 2s;
+                        }
+                    }
+                }
             }
         }
     }
@@ -662,13 +701,13 @@ form#dont_show_on_startup {
 			.pageindex {
 				font-weight: normal;
 				font-size: smaller;
-				
+
 				&:after {
 					content: ' - ';
 				}
 			}
 		}
-		
+
 		&.tx-dlf-pagegrid-cur {
 			.tx-dlf-pagegrid-pagination {
 				background-color: @uma-light-gray;
