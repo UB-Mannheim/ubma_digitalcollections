@@ -1,5 +1,5 @@
 <?php
-namespace Slub\SlubDigitalcollections\Controller;
+namespace Ubma\UbmaDigitalcollections\Controller;
 
 /***************************************************************
  *  Copyright notice
