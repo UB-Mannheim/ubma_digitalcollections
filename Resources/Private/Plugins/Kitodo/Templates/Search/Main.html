@@ -12,8 +12,10 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
-<f:form action="search" controller="Search" name="searchParameter" method="get" class="tx-dlf-search-form ubma-search-main.html">
-    <label for="tx-dlf-search-query-{viewData.uniqueId}">
+<!-- ubma_digitalcollections Plugin/Kitodo/Templates/Search/Main.html -->
+<div class="tx-dlf-search">
+<f:form action="search" controller="Search" name="searchParameter" method="get" class="tx-dlf-search-form" id="dont_show_on_startup">
+    <label for="tx-dlf-search-query-{viewData.uniqueId}" class="tx-dlf-search-query">
         <f:if condition="{lastSearch.query}">
             <f:then>{lastSearch.query -> f:format.htmlspecialchars()}</f:then>
             <f:else><f:translate key="search.query"/></f:else>
@@ -59,26 +61,28 @@
     </f:if>
 
     <f:if condition="{extendedSlotCount}">
-        <div class="tx-dlf-search-extended">
+        <div class="tx-dlf-search-extended-xl">
             <f:for each="{extendedSlotCount}" as="slot" iteration="slot_iterator">
-                <f:form.select property="extOperator.{slot_iterator.index}" value="{lastSearch.extOperator}" class="tx-dlf-search-operator tx-dlf-search-operator-{slot_iterator.index}">
-                    <f:for each="{operators}" as="operator">
-                        <f:form.select.option value="{operator}" class="tx-dlf-search-operator-option tx-dlf-search-operator-{operator}">
-                            <f:translate key="search.operator.{operator}" />
-                        </f:form.select.option>
-                    </f:for>
-                </f:form.select>
-                <f:form.select property="extField.{slot_iterator.index}" value="{lastSearch.extField}" class="tx-dlf-search-field-option tx-dlf-search-field-{slot_iterator.index}">
-                    <f:for each="{searchFields}" as="searchField">
-                        <f:form.select.option value="{searchField}" class="tx-dlf-search-field-option tx-dlf-search-field-{searchField}">
-                            <f:translate key="LLL:EXT:dlf/Resources/Private/Language/locallang_metadata.xlf:metadata.{searchField}" />
-                        </f:form.select.option>
-                    </f:for>
-                </f:form.select>
-                <f:form.textfield
-                    property="extQuery.{slot_iterator.index}"
-                    class="tx-dlf-search-query tx-dlf-search-query-{slot_iterator.index}"
-                    value="{lastSearch.extQuery.{slot_iterator.index}}" />
+                <div class="tx-dlf-search-extended">
+                    <f:form.select property="extOperator.{slot_iterator.index}" value="{lastSearch.extOperator}" class="tx-dlf-search-operator tx-dlf-search-operator-{slot_iterator.index}">
+                        <f:for each="{operators}" as="operator">
+                            <f:form.select.option value="{operator}" class="tx-dlf-search-operator-option tx-dlf-search-operator-{operator}">
+                                <f:translate key="search.operator.{operator}" />
+                            </f:form.select.option>
+                        </f:for>
+                    </f:form.select>
+                    <f:form.select property="extField.{slot_iterator.index}" value="{lastSearch.extField}" class="tx-dlf-search-field tx-dlf-search-field-option tx-dlf-search-field-{slot_iterator.index}">
+                        <f:for each="{searchFields}" as="searchField">
+                            <f:form.select.option value="{searchField}" class="tx-dlf-search-field-option tx-dlf-search-field-{searchField}">
+                                <f:translate key="LLL:EXT:dlf/Resources/Private/Language/locallang_metadata.xlf:metadata.{searchField}" />
+                            </f:form.select.option>
+                        </f:for>
+                    </f:form.select>
+                    <f:form.textfield
+                        property="extQuery.{slot_iterator.index}"
+                        class="tx-dlf-search-query tx-dlf-search-query-{slot_iterator.index}"
+                        value="{lastSearch.extQuery.{slot_iterator.index}}" />
+                </div>
             </f:for>
         </div>
     </f:if>
@@ -132,6 +136,7 @@
             </li>
         </ul>
     </f:for>
+</div>
 </div>
 
 <f:if condition="{settings.suggest}">
