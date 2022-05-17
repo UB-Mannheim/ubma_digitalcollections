@@ -86,30 +86,39 @@
                             <f:then>
                                 <f:comment>Special output for Newspaper / Ephemera</f:comment>
                                 <li value="{childIterator.cycle}" class="years">
+									{child.title}
                                     <f:link.page
-                                    pageUid="{settings.targetPidPageView}"
-                                    additionalParams="{tx_dlf:{page:'1', double:'0', id:'{child.uid}', pagegrid:'0'}}"
-                                    class=""
-                                    title="{f:if(condition:'{child.metsOrderlabel}', then:'{child.metsOrderlabel}', else:'[{document.title}]')}">
-                                    {child.metsOrderlabel}
+										pageUid="{settings.targetPidPageView}"
+										additionalParams="{tx_dlf:{page:'1', double:'0', id:'{child.uid}', pagegrid:'0'}}"
+										class="line_92"
+										title="{f:if(condition:'{child.metsOrderlabel}', then:'{child.metsOrderlabel}', else:'[{document.title}]')}">
+										{child.metsOrderlabel}
                                     </f:link.page>
                                 </li>
                             </f:then>
                             <f:else>
                                 <li value="{childIterator.cycle}" class="pageresult">
-                                    <f:link.page
-                                    pageUid="{settings.targetPidPageView}"
-                                    additionalParams="{tx_dlf:{page:'1', double:'0', id:'{child.uid}', pagegrid:'0'}}"
-                                    class=""
-                                    title="{f:if(condition:'{child.title}', then:'{child.title}', else:'[{document.title}]')}">
-                                        <div class="tx-dlf-listview-thumbnail">
+									<div class="tx-dlf-listview-thumbnail">
                                         <f:if condition="{child.thumbnail}">
-                                            <img src="{child.thumbnail}" alt="Vorschaubild von {f:if(condition:'{child.title}', then:'{child.title}', else:'[{document.title}]')}" />
+											<f:link.page
+												pageUid="{settings.targetPidPageView}"
+												additionalParams="{tx_dlf:{page:'1', double:'0', id:'{child.uid}', pagegrid:'0'}}"
+												class="no-underline line_105"
+												title="{f:if(condition:'{child.title}', then:'{child.title}', else:'[{document.title}]')}">
+												<img src="{child.thumbnail}" alt="Vorschaubild von {f:if(condition:'{child.title}', then:'{child.title}', else:'[{document.title}]')}" />
+											</f:link.page>
                                         </f:if>
                                         </div>
                                         <dl>
                                         <dt class="tx-dlf-title"><f:translate key='LLL:EXT:dlf/Resources/Private/Language/locallang_metadata.xlf:metadata.title' /></dt>
-                                        <dd class="tx-dlf-title">{f:if(condition:'{child.title}', then:'{child.title}', else:'[{document.title}]')}</dd>
+                                        <dd class="tx-dlf-title">
+											<f:link.page
+												pageUid="{settings.targetPidPageView}"
+												additionalParams="{tx_dlf:{page:'1', double:'0', id:'{child.uid}', pagegrid:'0'}}"
+												class="line_117"
+												title="{f:if(condition:'{child.title}', then:'{child.title}', else:'[{document.title}]')}">
+												{f:if(condition:'{child.title}', then:'{child.title}', else:'[{document.title}]')}</dd>
+											</f:link.page>
                                         <f:for each="{listedMetadata}" as="metadata">
                                             <f:if condition="{child.metadata.{metadata.indexName}.0} && {metadata.indexName} != 'type' && {metadata.indexName} != 'title'">
                                                 <dt class="tx-dlf-metadata-{metadata.indexName}">
@@ -127,7 +136,6 @@
                                             <f:translate key='LLL:EXT:dlf/Resources/Private/Language/locallang_structure.xlf:structure.{child.structure}' />
                                         </dd>
                                         </dl>
-                                    </f:link.page>
 
                                     <f:render partial="Basket/AddToBasket" arguments="{result: child}" />
 
@@ -142,14 +150,15 @@
                     <ol class="tx-dlf-volume">
                         <f:for each="{document.searchResults}" as="result" iteration="resultIterator">
                             <li value="{resultIterator.cycle}" class="pageresult">
-                                <f:link.page
-                                    pageUid="{settings.targetPidPageView}"
-                                    additionalParams="{tx_dlf:{page:'{result.page}', double:'0', id:'{document.uid}', pagegrid:'0', highlight_word: '{result.highlight_word}'}}"
-                                    class=""
-                                    title="{f:if(condition:'{result.title}', then:'{result.title}', else:'[{document.title}]')}, Seite {result.page}">
                                     <div class="tx-dlf-listview-thumbnail">
                                         <f:if condition="{result.thumbnail}">
-                                            <img src="{result.thumbnail}" alt="Vorschaubild von {f:if(condition:'{result.title}', then:'{result.title}', else:'[{document.title}]')}" />
+											<f:link.page
+												pageUid="{settings.targetPidPageView}"
+												additionalParams="{tx_dlf:{page:'{result.page}', double:'0', id:'{document.uid}', pagegrid:'0', highlight_word: '{result.highlight_word}'}}"
+												class="line_157"
+												title="{f:if(condition:'{result.title}', then:'{result.title}', else:'[{document.title}]')}, Seite {result.page}">
+												<img src="{result.thumbnail}" alt="Vorschaubild von {f:if(condition:'{result.title}', then:'{result.title}', else:'[{document.title}]')}" />
+											</f:link.page>
                                         </f:if>
                                     </div>
                                     <dl>
@@ -183,7 +192,7 @@
                                             <p class="textsnippet">[...] <f:format.raw>{result.snippet}</f:format.raw> [...]</p>
                                         </f:if>
                                     </div>
-                                </f:link.page>
+
 
                                 <f:render partial="Basket/AddToBasket" arguments="{result: {uid:document.uid, page: result.page}}" />
 
