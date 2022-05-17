@@ -772,6 +772,9 @@
             }
             &.backs {
                 left: 10px;
+                // Detail view: if z-index > 9 then back and next button are displayed above
+                // Downloads or Link UL list
+                z-index: 9;
                 span {
                     a, span {
                         left: 0;
