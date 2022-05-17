@@ -85,14 +85,14 @@
                             <f:if condition="{document.structure} == 'ephemera' || {document.structure} == 'newspaper'">
                             <f:then>
                                 <f:comment>Special output for Newspaper / Ephemera</f:comment>
+                                <f:comment>------------ YEAR ------------ </f:comment>
                                 <li value="{childIterator.cycle}" class="years">
-									{child.title}
                                     <f:link.page
 										pageUid="{settings.targetPidPageView}"
 										additionalParams="{tx_dlf:{page:'1', double:'0', id:'{child.uid}', pagegrid:'0'}}"
 										class="line_92"
-										title="{f:if(condition:'{child.metsOrderlabel}', then:'{child.metsOrderlabel}', else:'[{document.title}]')}">
-										{child.metsOrderlabel}
+										title="{f:if(condition:'{child.title}', then:'{child.title}', else:'[{document.title}]')}">
+										<f:comment>{child.metsOrderlabel}</f:comment>{child.title}
                                     </f:link.page>
                                 </li>
                             </f:then>
