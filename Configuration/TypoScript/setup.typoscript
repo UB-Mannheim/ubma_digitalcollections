@@ -104,6 +104,15 @@ page {
                     insertData = 1
                 }
 
+				# for newspaper
+				# like docTitle First Part = currentTitle
+                docTitle-currentTitle = TEXT
+                docTitle-currentTitle {
+                    value = {register:postTitleCurrentTitle}
+                    insertData = 1
+                }
+                # end for newspaper
+
                 # kitodo vars
                 gp-id = TEXT
                 gp-id {

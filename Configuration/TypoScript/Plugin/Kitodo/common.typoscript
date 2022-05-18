@@ -222,6 +222,17 @@ page {
           25.noTrimWrap = | | |
       }
     }
+    
+    # need for newspaper
+    postTitleCurrentTitle {
+		cObject = COA
+		cObject {
+			10 = TEXT
+			10.data = register:currentTitle
+			10.noTrimWrap = |||
+		}
+    }
+    
   }
 
 

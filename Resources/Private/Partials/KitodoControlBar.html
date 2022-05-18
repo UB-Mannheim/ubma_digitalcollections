@@ -18,11 +18,19 @@
             </nav>
         </div>
         <div class="ctrldata-container">
-            <div class="metadata-wrapper">
+            <div class="metadata-wrapper{f:if(condition: '{isNewspaper}', then: ' metadata-newspaper-{isNewspaper}', else: '')}">
                 <div class="tx-dlf-metadata">
                     <f:if condition="{docTitle}">
                         <h1>{docTitle}</h1>
                     </f:if>
+                    <f:if condition="{isNewspaper} == 'newspaper_anchor'">
+						<f:then>
+							<f:if condition="{docTitle-currentTitle}">
+								<h1>A docTitle-currentTitle {docTitle-currentTitle}</h1>
+							</f:if>
+						</f:then>
+					</f:if>
+					docTitle-currentTitle: {docTitle-currentTitle};
                     <f:cObject typoscriptObjectPath="plugin.tx_dlf_metadata" />
                 </div>
                 <div class="offcanvas-toggle"></div>
@@ -33,6 +41,8 @@
             </div>
         </div>
     </div>
+    <f:comment><f:debug>{_all}</f:debug></f:comment>
+    
 </f:section>
 
 </html>
