@@ -247,16 +247,29 @@ body.calendar {
 		ul.toc {
 			ul {
 				// no display of toc if in Calendar
+				// show only Document-Type and title Link
 				display: none;
 			}
 		}
 	}
-
-	document-view {
-		&.newspaper_year {
+}
+// for toc in newspaper
+body {
+	.toc-wrapper.newspaper_issue {
+		.tx-dlf-toc {
+			ul.toc {
+				li.submenu {
+					span.title.tx-dlf-child-type-Tag,
+					span.title.tx-dlf-child-type-Monat {
+						background-color: hotpink;
+						display: none;
+					}
+				}
+			}
 		}
 	}
 }
+
 
 .no-touchevents {
     body.collections.ubma-body {

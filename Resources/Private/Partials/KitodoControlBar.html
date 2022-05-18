@@ -27,7 +27,7 @@
                 </div>
                 <div class="offcanvas-toggle"></div>
             </div>
-            <div class="toc-wrapper">
+            <div class="toc-wrapper{f:if(condition: '{isNewspaper}', then: ' {isNewspaper}', else: '')}">
                 <f:cObject typoscriptObjectPath="plugin.tx_dlf_tableofcontents" />
                 <div class="offcanvas-toggle"></div>
             </div>
