@@ -34,7 +34,8 @@
                                         </f:if>
                                     </f:else>
                                 </f:if>
-                                <div class="tx-dlf-pagegrid-pagination">{entry.pagination}</div>
+<f:comment><f:debug title="all">{_all}</f:debug></f:comment>
+                                <div class="tx-dlf-pagegrid-pagination"><span class="pageindex" title="Seitenindex: {entry.page}">{entry.page}</span><span class="pagenumber" title="Seite: {entry.pagination}">{entry.pagination}</span></div>
                             </f:link.page>
                         </div>
                     </li>
