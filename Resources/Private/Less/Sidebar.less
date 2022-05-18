@@ -289,7 +289,10 @@
                     position: absolute;
                     top: -5px;
                     right: 0;
-                    left: 372px;
+                    // left: 372px;
+					// achtung: wert muss der gleiche sein wie bei :focus-within
+                    right: -224px;
+                    
                     width: max-content;
                     background: fade(@secondary-color, 97%);
                     max-height: none;
@@ -333,7 +336,9 @@
                     &:focus-within  {
                         padding: 15px;
                         opacity: 1;
-                        left: 372px;
+                        //left: 372px;
+                        // achtung: wert muss der gleiche sein wie bei .secondary-nav
+                        right: -224px;
                         .transform(scaleX(1));
                     }
                 }
