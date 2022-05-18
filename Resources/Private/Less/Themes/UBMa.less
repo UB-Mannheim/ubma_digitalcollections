@@ -242,6 +242,22 @@ body.listview {
     }
 }
 
+body.calendar {
+	.toc-wrapper {
+		ul.toc {
+			ul {
+				// no display of toc if in Calendar
+				display: none;
+			}
+		}
+	}
+
+	document-view {
+		&.newspaper_year {
+		}
+	}
+}
+
 .no-touchevents {
     body.collections.ubma-body {
         .main-column {
@@ -462,6 +478,10 @@ body {
            }
         }
     }
+
+
+
+
     // -------------------------------------------
     // Metadatenbereich
     // -------------------------------------------
@@ -551,8 +571,6 @@ body {
                 }
             }
         }
-
-
 
     }
 
