@@ -13,6 +13,13 @@
       data-namespace-typo3-fluid="true">
 
 <!-- ubma_digitalcollections Plugin/Kitodo/Templates/Search/Main.html -->
+<style>
+	/* display search field after 0.5s, so you dont see unformated search form with extended search field on startup */
+	/* visibility: hidden reserve space on screen, so rest of page didn' move after shown the form */
+	#dont_show_on_startup {
+		visibility: hidden;
+	}
+</style>
 <div class="tx-dlf-search">
     <f:form action="search" controller="Search" name="searchParameter" method="get" class="tx-dlf-search-form" id="dont_show_on_startup">
         <label for="tx-dlf-search-query-{viewData.uniqueId}" class="tx-dlf-search-query">
