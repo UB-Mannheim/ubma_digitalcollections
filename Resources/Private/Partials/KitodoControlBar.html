@@ -28,26 +28,17 @@
 										<h1>{docTitle}</h1>
 									</f:if>
 								</f:then>
-							</f:if>
-							<f:if condition="{isNewspaper} == 'newspaper_year'">
-								<f:then>
+								<f:else if="{isNewspaper} == 'newspaper_year'">
 									<f:if condition="{docTitle-currentTitle}">
 										<h1 class="year">{docTitle-PartsOfTitle}: {docTitle-currentTitle}</h1>
 									</f:if>
-								</f:then>
-							</f:if>
-							<f:if condition="{isNewspaper} == 'newspaper_issue'">
-								<f:then>
+								</f:else>
+                                <f:else if="{isNewspaper} == 'newspaper_issue'">
 									<f:if condition="{docTitle-currentTitle}">
 										<h1 class="issue">{docTitle-PartsOfPartsTitle}: {docTitle-currentTitle}</h1>
-									</f:if>
-								</f:then>
+                                    </f:if>
+								</f:else>
 							</f:if>
-							<f:comment>
-								<div>docTitle-currentTitle: '{docTitle-currentTitle}'</div>
-								<div>docTitle-PartsOfTitle: '{docTitle-PartsOfTitle}'</div>
-								<div>docTitle-PartsOfPartsTitle: '{docTitle-PartsOfPartsTitle}'</div>
-							</f:comment>
 						</f:then>
 						<f:else>
 							<f:if condition="{docTitle}">
@@ -67,7 +58,7 @@
     </div>
     <f:comment><f:debug>{_all}</f:debug></f:comment>
 
-    
+
 </f:section>
 
 </html>
