@@ -26,7 +26,21 @@
                     <f:if condition="{isNewspaper} == 'newspaper_anchor'">
 						<f:then>
 							<f:if condition="{docTitle-currentTitle}">
-								<h1>A docTitle-currentTitle {docTitle-currentTitle}</h1>
+                                <h1 class="anchor">{docTitle-currentTitle} {docTitle-PartsOfTitle} {docTitle-PartsOfPartsTitle}</h1>                                
+							</f:if>
+						</f:then>
+					</f:if>
+                    <f:if condition="{isNewspaper} == 'newspaper_year'">
+						<f:then>
+							<f:if condition="{docTitle-currentTitle}">
+                                <h1 class="year">{docTitle-PartsOfTitle}: {docTitle-currentTitle}</h1>
+							</f:if>
+						</f:then>
+					</f:if>
+                    <f:if condition="{isNewspaper} == 'newspaper_issue'">
+						<f:then>
+							<f:if condition="{docTitle-currentTitle}">
+                                <h1 class="issue">{docTitle-PartsOfPartsTitle}: {docTitle-currentTitle}</h1>
 							</f:if>
 						</f:then>
 					</f:if>
