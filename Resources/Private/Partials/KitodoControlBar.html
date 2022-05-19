@@ -3,6 +3,7 @@
       lang="en">
 
 <f:section name="ControlBar">
+<f:debug>{_all}</f:debug>
     <div class="control-bar">
         <div class="header-bar">
             <div class="brand"><f:link.page pageUid="{settings.rootPage.pid}" title="{settings.rootPage.title}" class="{settings.rootPage.cssClass}">{settings.rootPage.title}</f:link.page></div>
@@ -20,33 +21,42 @@
         <div class="ctrldata-container">
             <div class="metadata-wrapper{f:if(condition: '{isNewspaper}', then: ' metadata-newspaper-{isNewspaper}', else: '')}">
                 <div class="tx-dlf-metadata">
-                    <f:if condition="{docTitle}">
-                        <h1>{docTitle}</h1>
-                    </f:if>
-                    <f:if condition="{isNewspaper} == 'newspaper_anchor'">
+                    <f:if condition="{isNewspaper}">
 						<f:then>
-							<f:if condition="{docTitle-currentTitle}">
-                                <h1 class="anchor">{docTitle-currentTitle} {docTitle-PartsOfTitle} {docTitle-PartsOfPartsTitle}</h1>                                
+							<f:if condition="{isNewspaper} == 'newspaper_anchor'">
+								<f:then>
+									<f:if condition="{docTitle-currentTitle}">
+										<h1 class="anchor">{docTitle-currentTitle} {docTitle-PartsOfTitle} {docTitle-PartsOfPartsTitle}</h1>
+										<h2>{docTitle}</h2>
+									</f:if>
+								</f:then>
 							</f:if>
-						</f:then>
-					</f:if>
-                    <f:if condition="{isNewspaper} == 'newspaper_year'">
-						<f:then>
-							<f:if condition="{docTitle-currentTitle}">
-                                <h1 class="year">{docTitle-PartsOfTitle}: {docTitle-currentTitle}</h1>
+							<f:if condition="{isNewspaper} == 'newspaper_year'">
+								<f:then>
+									<f:if condition="{docTitle-currentTitle}">
+										<h1 class="year">{docTitle-PartsOfTitle}: {docTitle-currentTitle}</h1>
+									</f:if>
+								</f:then>
 							</f:if>
-						</f:then>
-					</f:if>
-                    <f:if condition="{isNewspaper} == 'newspaper_issue'">
-						<f:then>
-							<f:if condition="{docTitle-currentTitle}">
-                                <h1 class="issue">{docTitle-PartsOfPartsTitle}: {docTitle-currentTitle}</h1>
+							<f:if condition="{isNewspaper} == 'newspaper_issue'">
+								<f:then>
+									<f:if condition="{docTitle-currentTitle}">
+										<h1 class="issue">{docTitle-PartsOfPartsTitle}: {docTitle-currentTitle}</h1>
+									</f:if>
+								</f:then>
 							</f:if>
+							<f:comment>
+								<div>docTitle-currentTitle: '{docTitle-currentTitle}'</div>
+								<div>docTitle-PartsOfTitle: '{docTitle-PartsOfTitle}'</div>
+								<div>docTitle-PartsOfPartsTitle: '{docTitle-PartsOfPartsTitle}'</div>
+							</f:comment>
 						</f:then>
+							<f:if condition="{docTitle}">
+								<h1>{docTitle}</h1>
+							</f:if>
+						<f:else>
+						</f:else>
 					</f:if>
-					<div>docTitle-currentTitle: '{docTitle-currentTitle}'</div>
-					<div>docTitle-PartsOfTitle: '{docTitle-PartsOfTitle}'</div>
-					<div>docTitle-PartsOfPartsTitle: '{docTitle-PartsOfPartsTitle}'</div>
                     <f:cObject typoscriptObjectPath="plugin.tx_dlf_metadata" />
                 </div>
                 <div class="offcanvas-toggle"></div>
@@ -58,6 +68,7 @@
         </div>
     </div>
     <f:comment><f:debug>{_all}</f:debug></f:comment>
+
     
 </f:section>
 
