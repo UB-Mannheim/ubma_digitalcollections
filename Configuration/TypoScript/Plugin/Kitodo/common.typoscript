@@ -225,12 +225,32 @@ page {
     
     # need for newspaper
     postTitleCurrentTitle {
-		cObject = COA
-		cObject {
-			10 = TEXT
-			10.data = register:currentTitle
-			10.noTrimWrap = |||
-		}
+      cObject = COA
+      cObject {
+          10 = TEXT
+          10.data = register:currentTitle
+          10.noTrimWrap = |||
+      }
+    }
+    # need for newspaper
+    postTitlePartsOfTitle {
+      cObject = COA
+      cObject {
+          10 = TEXT
+          10.data = register:partOfTitle
+          10.required = 1
+          10.noTrimWrap = |||
+      }
+    }
+    # need for newspaper
+    postTitlePartsOfPartsTitle {
+      cObject = COA
+      cObject {
+          10 = TEXT
+          10.data = register:partOfPartOfTitle
+          10.required = 1
+          10.noTrimWrap = |||
+      }
     }
     
   }

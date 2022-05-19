@@ -104,11 +104,25 @@ page {
                     insertData = 1
                 }
 
-				# for newspaper
-				# like docTitle First Part = currentTitle
+                # for newspaper
+                # like docTitle First Part = currentTitle
                 docTitle-currentTitle = TEXT
                 docTitle-currentTitle {
                     value = {register:postTitleCurrentTitle}
+                    insertData = 1
+                }
+
+                # like docTitle Second Part = PartsOfTitle
+                docTitle-PartsOfTitle = TEXT
+                docTitle-PartsOfTitle {
+                    value = {register:postTitlePartsOfTitle}
+                    insertData = 1
+                }
+
+                # like docTitle Third Part = PartsOfPartsTitle
+                docTitle-PartsOfPartsTitle = TEXT
+                docTitle-PartsOfPartsTitle {
+                    value = {register:postTitlePartsOfPartsTitle}
                     insertData = 1
                 }
                 # end for newspaper
