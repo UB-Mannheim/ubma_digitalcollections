@@ -3,7 +3,6 @@
       lang="en">
 
 <f:section name="ControlBar">
-<f:debug>{_all}</f:debug>
     <div class="control-bar">
         <div class="header-bar">
             <div class="brand"><f:link.page pageUid="{settings.rootPage.pid}" title="{settings.rootPage.title}" class="{settings.rootPage.cssClass}">{settings.rootPage.title}</f:link.page></div>
@@ -25,9 +24,8 @@
 						<f:then>
 							<f:if condition="{isNewspaper} == 'newspaper_anchor'">
 								<f:then>
-									<f:if condition="{docTitle-currentTitle}">
-										<h1 class="anchor">{docTitle-currentTitle} {docTitle-PartsOfTitle} {docTitle-PartsOfPartsTitle}</h1>
-										<h2>{docTitle}</h2>
+									<f:if condition="{docTitle}">
+										<h1>{docTitle}</h1>
 									</f:if>
 								</f:then>
 							</f:if>
@@ -51,10 +49,10 @@
 								<div>docTitle-PartsOfPartsTitle: '{docTitle-PartsOfPartsTitle}'</div>
 							</f:comment>
 						</f:then>
+						<f:else>
 							<f:if condition="{docTitle}">
 								<h1>{docTitle}</h1>
 							</f:if>
-						<f:else>
 						</f:else>
 					</f:if>
                     <f:cObject typoscriptObjectPath="plugin.tx_dlf_metadata" />
