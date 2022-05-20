@@ -766,7 +766,7 @@ div#tx-dlf-fulltextselection span.textline {
   display: block;
 }
 form#dont_show_on_startup {
-  animation: cssAnimation 0s 1.5s forwards;
+  animation: cssAnimation 0s 2.5s forwards;
   visibility: visible;
   opacity: 0;
 }
