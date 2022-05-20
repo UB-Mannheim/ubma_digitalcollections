@@ -22,12 +22,17 @@
 </style>
 <div class="tx-dlf-search">
     <f:form action="search" controller="Search" name="searchParameter" method="get" class="tx-dlf-search-form" id="dont_show_on_startup">
+		<f:comment>
         <label for="tx-dlf-search-query-{viewData.uniqueId}" class="tx-dlf-search-query">
             <f:if condition="{lastSearch.query}">
                 <f:then>{lastSearch.query -> f:format.htmlspecialchars()}</f:then>
                 <f:else><f:translate key="search.query"/></f:else>
             </f:if>
         </label>
+		</f:comment>
+		<label for="tx-dlf-search-query-{viewData.uniqueId}" class="tx-dlf-search-query"><f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:form.query' extensionName='ubma_digitalcollections' />
+		</label>
+        
 
         <f:comment><!-- Never change the @id of this input field! Otherwise search suggestions won't work! --></f:comment>
         <f:form.textfield id="tx-dlf-search-query" property="query" value="{lastSearch.query}" />

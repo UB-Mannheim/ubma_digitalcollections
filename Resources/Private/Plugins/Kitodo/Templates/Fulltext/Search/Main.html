@@ -14,12 +14,17 @@
 
 <f:form action="search" controller="Search" name="searchParameter" method="get">
 
+	<f:comment>
     <label for="tx-dlf-search-query">
         <f:if condition="{lastSearch.query}">
             <f:then>{lastSearch.query -> f:format.htmlspecialchars()}</f:then>
             <f:else><f:translate key="search.query"/></f:else>
         </f:if>
     </label>
+    </f:comment>
+    <label for="tx-dlf-search-query"><f:translate key='LLL:EXT:ubma_digitalcollections/Resources/Private/Language/locallang_kitodo.xlf:form.query' extensionName='ubma_digitalcollections' />
+    </label>
+
 
     <f:form.textfield id="tx-dlf-search-query" property="query" value="{lastSearch.query}" />
 
