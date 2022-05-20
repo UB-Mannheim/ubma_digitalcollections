@@ -100,14 +100,16 @@ aside.sidebar .tx-dlf-search { // the scrolling container with search elements
         input {
             &[type="text"] {
                 position: relative;
-                width: 100%;
+                //width: 100%;
+                width: 299px;
                 font-family: @font-sans-normal;
                 font-size: 14px;
                 background: white;
                 border: 0;
                 line-height: 1.1;
                 padding: 4px 10px;
-                height: 40px;
+                //height: 40px;
+                height: 30px;
                 color: @basegrey-color;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
                 margin-bottom: 10px;
@@ -160,6 +162,10 @@ aside.sidebar .tx-dlf-search { // the scrolling container with search elements
         }
         label {
             margin-right: 10px;
+            
+            // Problem: there is a id added to the for
+            // so i add a class
+            &.tx-dlf-search-query,
             &[for="tx-dlf-search-query"] {
                 display: none;
             }
@@ -213,6 +219,7 @@ aside.sidebar .tx-dlf-search { // the scrolling container with search elements
                 &[type="text"] {
                     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
                     border: 1px solid rgb(175, 175, 175);
+                    width: 239px;
                 }
                 &[type="submit"] {
                     top: 1px;
