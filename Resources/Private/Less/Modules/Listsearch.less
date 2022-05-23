@@ -207,6 +207,7 @@ aside.sidebar .tx-dlf-search { // the scrolling container with search elements
             }
         }
     }
+    
     @media screen and (min-width: @tabletLandscapeViewportWidth) {
         position: relative;
         top: auto;
@@ -219,7 +220,7 @@ aside.sidebar .tx-dlf-search { // the scrolling container with search elements
                 &[type="text"] {
                     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
                     border: 1px solid rgb(175, 175, 175);
-                    width: 239px;
+                    // width: 239px;
                 }
                 &[type="submit"] {
                     top: 1px;
@@ -258,6 +259,16 @@ aside.sidebar .tx-dlf-search { // the scrolling container with search elements
             }
         }
     }
-}
 
+    @media screen and (min-width: @tabletLandscapeViewportWidth)  and (max-width: (@desktopViewportWidth - 1)) {
+        form {
+            input {
+                &[type="text"] {
+                    width: 239px;
+                }
+	    }
+	}
+    }
+
+}
 // EOF
