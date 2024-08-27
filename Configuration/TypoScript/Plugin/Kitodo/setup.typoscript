@@ -158,7 +158,14 @@ plugin.tx_dlf_fulltexttool {
     settings {
         tools = fulltexttool
         activateFullTextInitially = 0
-        fullTextScrollElement = html, body
+        fullTextScrollElement = #tx-dlf-fulltextselection
+    }
+}
+
+plugin.tx_dlf_scoretool < plugin.tx_dlf_toolbox
+plugin.tx_dlf_scoretool {
+    settings {
+        tools = scoretool
     }
 }
 
